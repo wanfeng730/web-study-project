@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start01</title>
+</head>
+<body>
+    <!-- download属性点击触发下载 -->
+    <a href="static/QQ20241110-150113.png" download=>图片链接1</a>
+    <a href="static/QQ20241110-150113.png" download="这是自定义的下载文件名">图片链接2</a>
+
+    <a href="tel:10086">中国移动客服电话</a>
+    <a href="mailto:123456@qq.com">发送邮箱</a>
+    <a href="sms:18911112222">发送短信</a>
+
+    <!-- 跳转锚点 href写 #字符 + 另一个超链接的name属性或其他标签的id -->
+    <a href="#endLineA">跳转到最后一行</a>
+    <a href="#endLineB">跳转到最后一行</a>
+
+    <img src="static/QQ20241110-150113.png" alt="bug">
+    <img src="static/QQ20241110-150113.png" alt="bug">
+    <img src="static/QQ20241110-150113.png" alt="bug">
+    <img src="static/QQ20241110-150113.png" alt="bug">
+    <img src="static/QQ20241110-150113.png" alt="bug">
+    <img src="static/QQ20241110-150113.png" alt="bug">
+    <a name="endLineA"></a>
+    <p id="endLineB">这里是最后一行</p>
+
+    <a href="#">回到顶部</a>
+    <a href="">刷新页面</a>
+    <a href="start.html#startImage01">回到Start页面查看图片链接</a>
+    <a href="javascript:alert(730);">弹窗</a>
+</body>
+</html>
