@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start03Table</title>
+</head>
+<body>
+    <table border="2">
+        <caption>表格标题</caption>
+        <!-- 表头 -->
+        <thead>
+            <!-- 行 -->
+            <tr>
+                <!-- 表头单元格 -->
+                <th>表头字段1</th>
+                <!-- colspan: 跨列 -->
+                <th colspan="3">表头字段2</th>
+                <!-- <th>表头字段3</th>
+                <th>表头字段4</th> -->
+            </tr>
+        </thead>
+        <!-- 表内容 -->
+        <tbody>
+            <!-- 行 -->
+            <tr>
+                <!-- 表数据单元格 rowspan: 跨列-->
+                <td rowspan="2">AAA</td>
+                <td>BBB</td>
+                <td>CCC</td>
+                <td>DDD</td>
+            </tr>
+            <!-- 行 -->
+            <tr>
+                <!-- 表数据单元格 -->
+                <td>FFF</td>
+                <td>GGG</td>
+                <td>HHH</td>
+            </tr>
+        </tbody>
+
+        <!-- 表脚注 -->
+        <tfoot>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>共计8个</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>
