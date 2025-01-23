@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charset Entity</title>
+</head>
+<body>
+    <div>AAA BBB</div>
+    <div>AAA    BBB</div>
+    <!-- 空格转义 -->
+    <div>AAA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BBB</div>
+
+    <!-- 标签转义 -->
+    <div>AAA <h1> BBB</div>
+    <div>AAA &lt;h1&gt; BBB</div>
+
+    <!-- 转义转义符 -->
+    <div>空格的转义符是 &amp;nbsp;</div>
+    <div>&的转义符是 &amp;amp;</div>
+
+    <!-- 人民币 -->
+    <div>价格：¥1888</div>
+    <div>价格：&yen;1888</div>
+
+    <!-- 版权符号 -->
+    <div>&copy; Wanfeng730</div>
+
+    <!-- 乘法 -->
+    <div>2 &times; 2 = 4</div>
+
+    <!-- 除法 -->
+    <div>4 &divide; 2 = 2</div>
+</body>
+</html>
