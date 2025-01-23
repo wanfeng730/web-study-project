@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Start-Ifarme</title>
+</head>
+<body>
+    <!-- 嵌入图片，网页等 -->
+    <iframe src="favicon.ico" frameborder="1"></iframe>
+    <br>
+
+    <iframe src="https://www.bilibili.com" frameborder="0"></iframe>
+    <br>
+
+    <!-- 与超链接配合使用，将href显示在target对应的iframe框架中 -->
+    <a href="static/ZQRB-20231030.pdf" target="pdfFile">查看pdf文件</a>
+    <br>
+    <iframe name="pdfFile" frameborder="0" width="300" height="500"></iframe>
+    
+    <!-- 与表单配合使用 -->
+    <form action="https://so.toutiao.com/search" target="formSearchPage">
+        <input type="text" name="keyword">
+        <button>search</button>
+    </form>
+    <iframe name="formSearchPage" frameborder="0"></iframe>
+</body>
+</html>
