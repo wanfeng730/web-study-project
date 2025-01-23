@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 表单提交 -->
+    <form action="https://search.jd.com/search" target="_blank" method="post">
+        <!-- 对控件进行分组 -->
+        <fieldset>
+            <!-- 控件分组的标题 -->
+            <legend>登录框</legend>
+            <div>
+                <!-- 内容作为请求参数拼接提交链接 -->
+                <input type="text" name="wd">
+            </div>
+            <div>
+                <!-- for关联控件的id，点击label标签可以获取对应id的焦点-->
+                <label for="username_in">用户名</label>
+                <!-- 文本框 -->
+                <input id="username_in" name="username" value="wanfeng" maxlength="10">
+            </div>
+            <div>
+                <label for="password_in">密码：</label>
+                <input id="password_in" name="pwd" maxlength="6">
+            </div>
+            <div>
+                <!-- label标签里面也可以-->
+                <label>
+                    性别
+                    <!-- 单选框 使用name实现单选，表示为同一个参数-->
+                    <input type="radio" name="gender" value="male">男
+                    <input type="radio" name="gender" value="female" checked>女
+                </label>
+            </div>
+            <div>
+                <!-- 复选框 -->
+                 爱好：
+                 <input type="checkbox" name="hobby" value="1" checked>study
+                 <input type="checkbox" name="hobby" value="2">sport
+                 <input type="checkbox" name="hobby" value="3" checked>money！
+            </div>
+            <div>
+                <!-- 文本域 -->
+                <textarea name="remark" rows="5" cols="50">文本域</textarea>
+            </div>
+            <div>
+                <!-- 文本域 -->
+                <textarea disabled name="remark" rows="5" cols="50">文本域</textarea>
+            </div>
+            <div>
+                <!-- 下拉框 -->
+                地区：
+                <select name="provinces" disabled>
+                    <option value="ZJ">浙江</option>
+                    <option value="HZ">杭州</option>
+                    <!-- selected 标记默认选中 -->
+                    <option value="JH" selected>金华</option>
+                </select>
+            </div>
+    
+        
+            <!-- 隐藏输入框，用于传值固定值，鉴权，防止恶意调用 -->
+            <input type="hidden" name="tag" value="sk">
+        </fieldset>
+        
+
+        <!-- type="submit" -->
+        <button>确认</button>
+        <!-- <input type="submit" value="确认"> -->
+
+        <button type="reset">重置</button>
+        <!-- <input type="reset" value="重置"> -->
+
+        <button type="button">普通按钮（点我没反应）</button>
+
+        <button disabled>被禁用的按钮</button>
+    </form>
+</body>
+</html>
