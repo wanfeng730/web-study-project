@@ -1,0 +1,21 @@
+/* 交集选择器  是p标签且类名为endLink*/
+/* 最常用的写法是 标签和类名交集  类名和类名交集*/
+p.endLink{
+    color: burlywood;
+    font-size: 45px;
+}
+.endLink.appLink{
+    color: black;
+}
+
+/* 并集选择器 用逗号分隔  可以缩小样式表的文件大小*/
+.titleClass,
+.phoneLink{
+    background-color: gray;
+}
+h2,
+.appLink,
+#link2{
+    color: aqua;
+    font-size: 50px;
+}
