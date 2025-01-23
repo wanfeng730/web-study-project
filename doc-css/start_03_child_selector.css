@@ -1,0 +1,23 @@
+html{
+    background: #22252A;
+    color: aliceblue;
+}
+
+/* 后代选择器 修改所有的层级 */
+ul li{
+    color: aqua;
+}
+ul span{
+    color: orange;
+}
+ul li li{
+    color: blueviolet;
+}
+.class1 dt{
+    font-size: 40px;
+}
+
+.class1 .ddClass1,
+.class1 .ddClass2{
+    color: chocolate;
+}

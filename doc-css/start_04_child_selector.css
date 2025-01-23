@@ -1,0 +1,7 @@
+/* 子代选择器 只往下一层的选择器修改样式*/
+ul > span{
+    color: aqua;
+}
+ul > li > span{
+    color: blue;
+}
