@@ -1,0 +1,18 @@
+div{
+    background-color: burlywood;
+}
+span{
+    background-color: cadetblue;
+}
+/* 块级元素:宽度占满父元素，高度由内容决定 */
+#div1{
+    width: 500px;
+}
+/* 行内元素：不独占一行，一行容纳不下的换行显示，无法通过css调整宽高 */
+#span1{
+    width: 500px;
+}
+/* 行内块元素：不独占一行，一行容纳不下的换行显示，可以通过css调整宽高*/
+#image1{
+    width: 300px;
+}
