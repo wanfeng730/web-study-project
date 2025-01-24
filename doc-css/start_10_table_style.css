@@ -1,0 +1,26 @@
+table{
+    /* 边框粗细 */
+    border-width: 2px;
+    /* 边框颜色 */
+    border-color: skyblue;
+    /* 边框样式 */
+    border-style: solid;
+    /* 表格列宽 */
+    table-layout: auto;
+    /* 单元格间距（单元格合并不能生效） */
+    border-spacing: 0px;
+    /* 合并相邻的单元格边框 */
+    border-collapse: collapse;
+    /* 表格标题位置 */
+    caption-side: bottom;
+    /* 隐藏没有内容的单元格（单元格合并不能生效） */
+    empty-cells: hide;
+}
+th{
+    /* 边框粗细 */
+    border-width: 1px;
+    /* 边框颜色 */
+    border-color: skyblue;
+    /* 边框样式 */
+    border-style: dotted;
+}

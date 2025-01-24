@@ -1,0 +1,15 @@
+html{
+    font-size: 15px;
+}
+
+#title1{
+    background-color: green;
+    font-size: 20px;
+    /* 长度单位*/
+    /* px: 像素*/
+    /* em: 当前font-size的长度 如果font-size也是em单位，找父级的font-size */
+    /* rem: 根元素（html元素的font-size的长度，没有则使用浏览器默认值） */
+    /* %: 相对父元素的比例 */
+    /* vm：视口宽度，1vm即浏览器窗口宽度的1% */
+    width: 15rem;
+}

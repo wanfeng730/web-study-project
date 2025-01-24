@@ -1,3 +1,17 @@
+div{
+    /* 背景图片 */
+    background-image: url(../doc-html/static/wallhaven-vqx88l.jpg);
+    /* 背景图片重复 */
+    background-repeat: no-repeat;
+    /* 背景图片位置 center, 10px 20px（左上角点向右10px，向下20px）*/
+    background-position: center;
+    /* background-position: 10px 20px; */
+    /* background-position-x: 10px; */
+    /* background-position-y: 20px; */
+    /* 背景尺寸：cover拉伸覆盖 */
+    background-size: cover;
+}
+
 /* 字体属性 */
 .c1{
     /* 背景颜色 */
