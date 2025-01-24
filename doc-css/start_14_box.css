@@ -1,0 +1,65 @@
+/* 盒子模型
+    margin：外边距
+    border：边框
+    padding：内边距
+ */
+
+ #div1{
+    background-color: gray;
+    width: 500px;
+    /* 设置溢出内容隐藏，解决margin塌陷问题 */
+    overflow: hidden;
+    
+ }
+ #p2{
+    /* 宽度高度区间限制 */
+    min-width: 600px;
+    min-height: 100px;
+
+    background-color: chocolate;
+    padding: 10px;
+    border: dotted 2px  aliceblue;
+    border-top-width: 2px;
+    border-right-width: 4px;
+    border-bottom-width: 6px;
+    border-left-width: 8px;
+
+    /* 外边距：上下左右都是15 */
+    margin: 15px;
+    /* 外边距：上下是10，左右是15 */
+    margin: 10px 15px;
+    /* 外边距： 上10，左右20，下40*/
+    margin: 10px 20px  40px;
+    /* 外边距： 上10，右20，下30，左40*/
+    margin: 10px 20px 30px 40px;
+    /* margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 15px;
+    margin-right: 15px; */
+    
+    /* 使用外边距居中 */
+    /* margin: 0 auto; */
+    
+
+    /* 子元素的margin是从父元素的内容区开始计算 */
+    /* margin左右都为auto = 水平方向距中 */
+    /* margin可以是负值，即反方向有边距 */
+
+    /* margin塌陷问题：第一个子元素的margin-top和最后一个子元素的margin-bottom会在父元素上生效
+    解决方法：
+        1. 给父元素加边框
+        2. 给父元素加内边距
+        3. 给父元素设置overflow: hidden
+     */
+    margin: 40px 20px 30px 40px;
+
+    /* margin合并问题：上下元素之间碰在一起的margin会合并覆盖，左右元素之间碰在一起不会合并覆盖 */
+ }
+ #p3{
+    margin-top: 30px;
+ }
+
+ #title1{
+    width: 100px;
+    margin: 0 auto;
+ }

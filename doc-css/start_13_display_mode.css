@@ -4,15 +4,20 @@ div{
 span{
     background-color: cadetblue;
 }
-/* 块级元素:宽度占满父元素，高度由内容决定 */
+/* 块级元素: block,宽度占满父元素，高度由内容决定 */
 #div1{
     width: 500px;
 }
-/* 行内元素：不独占一行，一行容纳不下的换行显示，无法通过css调整宽高 */
+/* 行内元素：inline,不独占一行，一行容纳不下的换行显示，无法通过css调整宽高 */
 #span1{
     width: 500px;
 }
-/* 行内块元素：不独占一行，一行容纳不下的换行显示，可以通过css调整宽高*/
+/* 行内块元素：inline-block,不独占一行，一行容纳不下的换行显示，可以通过css调整宽高*/
 #image1{
     width: 300px;
+}
+
+/* display修改显示模式： none隐藏不显示，block块级元素，inline行内元素，inline-block行内块元素 */
+#div2{
+    display: inline-block;
 }
