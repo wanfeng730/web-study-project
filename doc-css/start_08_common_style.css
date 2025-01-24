@@ -19,9 +19,21 @@
     color: aquamarine;
     /* 文字间距 */
     letter-spacing: 10px;
+    /* 文本修饰 none（常用于消除超链接的默认下划线）, overline, underline, line-through*/
+    text-decoration: underline dotted royalblue;
+    /* 文本缩进 */
+    text-indent: 100px;
+    /* 文本对齐 left, right, center*/
+    text-align: center;
+    /* 文本行高 */
+    line-height: 25px;
 }
-#p1{
-    /* 字体大小 */
-    font-size: 40px;
-    font-style: oblique;
+
+#s1{
+    font-size: 80px;
+}
+#s2{
+    background-color: chocolate;
+    /* 垂直基线对齐：auto, top, middle, bottom */
+    vertical-align: middle;
 }
