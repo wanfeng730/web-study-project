@@ -1,0 +1,40 @@
+/* 伪类选择器，以标签的状态区分 */
+
+/* 动态伪类：未访问过的链接 */
+a:link{
+    color: aqua;
+}
+/* 动态伪类：访问过的链接 */
+a:visited{
+    color: black;
+}
+/* 动态伪类：鼠标悬浮时的链接 */
+a:hover{
+    color: royalblue;
+}
+/* 动态伪类：鼠标点击激活时的链接 */
+a:active{
+    color: green;
+}
+/* 注意：当鼠标点击链接时，状态是同时有link，hover，acrive三个，根据样式表后来者居上原则，会以最后指定状态的样式显示
+所以链接的状态样式必须按照如此固定的顺序写 */
+
+/* input标签的状态也同链接，处于focus的时候也处于hover状态 */
+input:hover{
+    background-color: blanchedalmond;
+}
+input:focus{
+    background-color: aqua;
+    border: 3px;
+}
+
+/* 结构伪类：选择div的第一个子标签 */
+/* 如果div的第一个子标签不是p，即同时满足 div下的p标签 和 div下的第一个子标签 */
+div>p:first-child{
+    color: red;
+}
+
+
+
+
+

@@ -1,0 +1,27 @@
+/* 字体属性 */
+.c1{
+    /* 背景颜色 */
+    background-color: gray;
+
+    /* 字体大小 */
+    font-size: 20px;
+    /* 字体族 从前往后设置，如果某些字符在这个字体里没有，或者这个字体不存在，往后找*/
+    /* 一般字体的使用原则是，纯文本页面使用衬线字体，非纯文本页面使用非衬线字体 */
+    /* sans-serif表示向浏览器获取非衬线字体 */
+    font-family: "Consolas", "行楷-简", sans-serif;
+    /* 字体风格 normal默认，italic斜体*/
+    /* 推荐使用italic: 先找字体集中是否有斜体字体，如果没有，做强制倾斜   oblique是直接强制转换 */
+    font-style: italic;
+    /* 字体粗细 与字体集有关，如果有对应的粗细就显示，没有得话就显示更细一点的*/
+    font-weight: bolder;
+    
+    /* 文本颜色 */
+    color: aquamarine;
+    /* 文字间距 */
+    letter-spacing: 10px;
+}
+#p1{
+    /* 字体大小 */
+    font-size: 40px;
+    font-style: oblique;
+}
