@@ -1,0 +1,24 @@
+/* 属性选择器 */
+[for]{
+    font-size: 50px;
+}
+
+/* 属性选择器 属性等于某个值*/
+[type="reset"]{
+    background-color: brown;
+}
+
+/* 属性选择器 属性以r开头 */
+[name^="r"]{
+    background-color:bisque;
+}
+
+/* 属性选择器 属性以x结尾 */
+[id$="in"]{
+    background-color:aquamarine;
+}
+
+/* 属性选择器 属性包含username结尾 */
+[id*="username"]{
+    background-color:cadetblue;
+}

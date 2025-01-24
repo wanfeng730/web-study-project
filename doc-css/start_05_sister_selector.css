@@ -1,0 +1,12 @@
+/* 相邻兄弟选择器，选择加号后面的元素，在html中是紧紧相邻的两个标签 */
+ol+div{
+    color: aqua;
+}
+dt+dd{
+    color: brown;
+}
+
+/* 通用兄弟选择器，选择波浪号后面的元素，所有与span同级的ul标签 */
+span~ul{
+    color: chocolate;
+}
