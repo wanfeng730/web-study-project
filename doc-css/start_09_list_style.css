@@ -1,0 +1,11 @@
+ol{
+    /* 列表符号 */
+    list-style-type: lower-roman;
+    /* 列表符号位置 */
+    list-style-position: outside;
+    /* 列表符号使用图片 */
+    list-style-image: url("../doc-html/favicon.ico");
+}
+ol li{
+    background-color: gray;
+}
