@@ -1,0 +1,68 @@
+.parent-div{
+    width: 500px;
+    height: 300px;
+    background-color: gray;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    /* 开启flex布局 */
+    display: flex;
+    /* 调整主轴方向 row水平，column垂直，reverse表示反向排列 */
+    flex-direction: row;
+    /* 主轴换行方式 */
+    flex-wrap: wrap;
+    /* 主轴复合属性 */
+    /* flex-flow: row wrap; */
+
+    /* 主轴对齐方式 
+        flex-start 主轴起始位置 
+        flex-end 主轴末尾位置
+        center 主轴中间 
+        space-around 空间分配 间隔是边缘的两倍
+        space-between 空间分配 没有边缘，紧靠，间隔均匀
+        space-evenly 空间分配 间隔和边缘都相等
+    */
+    justify-content: flex-start;
+
+    /* 侧轴对齐方式
+        flex-start 侧轴起始位置
+        flex-end 侧轴末尾位置
+        center 侧轴中间
+        baseline 基线对齐（文字的基线）
+        stretch 默认值。拉伸，侧轴方向填满父容器（子元素未指定高度时生效）
+         */
+    align-items: center;
+
+    /* 侧轴对齐方式
+        flex-start 侧轴起始位置
+        flex-end 侧轴末尾位置
+        center 侧轴中间
+        space-around 空间分配 间隔是边缘的两倍
+        space-between 空间分配 没有边缘，紧靠，间隔均匀
+        space-evenly 空间分配 间隔和边缘都相等
+     */
+    align-content: space-evenly;
+}
+.child{
+    width: 100px;
+    height: 100px;
+    background-color: antiquewhite;
+    border: 1px solid black;
+}
+.child1{
+
+}
+
+#div21{
+    height: 100px;
+}
+#div22{
+    height: 200px;
+}
+#div23{
+    height: 50px;
+}
+
+#div31{
+    /* 父元素开启flex后直接指定margin auto开启水平和垂直方向都距中 */
+    margin: auto;
+}

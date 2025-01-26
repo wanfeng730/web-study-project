@@ -4,14 +4,14 @@
     padding：内边距
  */
 
- #div1{
+#div1{
     background-color: gray;
     width: 500px;
     /* 设置溢出内容隐藏，解决margin塌陷问题 */
     overflow: hidden;
     
- }
- #p2{
+}
+#p2{
     /* 宽度高度区间限制 */
     min-width: 600px;
     min-height: 100px;
@@ -54,12 +54,16 @@
     margin: 40px 20px 30px 40px;
 
     /* margin合并问题：上下元素之间碰在一起的margin会合并覆盖，左右元素之间碰在一起不会合并覆盖 */
- }
- #p3{
-    margin-top: 30px;
- }
 
- #title1{
+
+    /* visibility: hidden为隐藏，但是仍然占位 */
+    visibility: hidden;
+}
+#p3{
+    margin-top: 30px;
+}
+
+#title1{
     width: 100px;
     margin: 0 auto;
- }
+}  

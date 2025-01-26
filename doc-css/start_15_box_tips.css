@@ -1,0 +1,36 @@
+div{
+    width: 300px;
+    height: 300px;
+    background-color: gray;
+    margin-bottom: 10px;
+    
+    /* line-height 必须加，子元素是行内元素或块元素的话，veritical-align在一行中生效 */
+    line-height: 300px;
+    text-align: center;
+}
+
+#s1{
+    width: 70px;
+    height: 50px;
+    background-color: brown;
+    border: 1px solid black;
+
+    /* 垂直方向居中 */
+    vertical-align: middle;
+}
+#s2{
+    width: 70px;
+    height: 50px;
+    background-color: brown;
+    border: 1px solid black;
+
+    /* 垂直方向居中 */
+    vertical-align: middle;
+}
+
+
+#img1{
+    height: 100px;
+    vertical-align: middle;
+}
+
