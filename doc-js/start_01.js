@@ -99,6 +99,34 @@ console.log(parseFloat(v14));
 console.log(parseInt(v15));
 // 开头不是数字，结果为NaN
 console.log(parseInt(v16));
+console.log(Number(v13));
+// 隐式转换
+console.log('13' - 0);
+console.log('14' * 1);
+
+// 布尔类型转换
+// false 
+console.log(Boolean(''));
+// false
+console.log(Boolean(0));
+// false
+console.log(Boolean(NaN));
+// false
+console.log(Boolean(null));
+// false
+console.log(Boolean(undefined));
+// true
+console.log(Boolean('晚风'));
+// true
+console.log(Boolean(12));
+
+// 不要用两个浮点数比大小，因为精度问题
+var v17 = 0.1 + 0.2
+// false
+console.log(v17 == 0.3);
+
+
+
 
 
 
