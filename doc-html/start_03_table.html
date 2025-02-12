@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../doc-css/dark-mode.css">
+    <!-- <link rel="stylesheet" href="../doc-css/dark-mode.css"> -->
     <link rel="stylesheet" href="../doc-css/start_10_table_style.css">
     <title>Start03Table</title>
 </head>
@@ -50,5 +50,71 @@
             </tr>
         </tfoot>
     </table>
+
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    <input class="selectAll" type="checkbox">
+                </th>
+                <th>商品</th>
+                <th>价格</th>
+            </tr>
+        </thead>
+        <!-- 表内容 -->
+        <tbody>
+            <!-- 行 -->
+            <tr>
+                <td>
+                    <input class="select1" type="checkbox">
+                </td>
+                <td>BBB</td>
+                <td>CCC</td>
+            </tr>
+            <!-- 行 -->
+            <tr>
+                <td>
+                    <input class="select1" type="checkbox">
+                </td>
+                <td>FFF</td>
+                <td>GGG</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        var trList = document.querySelectorAll('tbody tr');
+        console.log(trList);
+        for (var i = 0; i < trList.length; i++) {
+            trList[i].onmouseover = function(){
+                this.className = 'trMouseOver';
+            }
+            trList[i].onmouseout = function(){
+                this.className = '';
+            }
+        }
+
+        var selectAll = document.querySelector('.selectAll');
+        var select1List = document.querySelectorAll('.select1');
+
+        selectAll.onclick = function(){
+            // 获取复选框的选定状态
+            console.log(this.checked);
+            for (var i = 0; i < select1List.length; i++) {
+                select1List[i].checked = this.checked;
+            }
+        }
+
+        for (var i = 0; i < select1List.length; i++) {
+            select1List[i].onclick = function(){
+                var allChecked = true;
+                for (var j = 0; j < select1List.length; j++) {
+                    allChecked = allChecked & select1List[j].checked;
+                    console.log('j ' + j +' '+ allChecked);
+                }
+                selectAll.checked = allChecked;
+            }
+        }
+    </script>
 </body>
 </html>

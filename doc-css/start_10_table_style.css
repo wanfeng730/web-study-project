@@ -24,3 +24,7 @@ th{
     /* 边框样式 */
     border-style: dotted;
 }
+
+.trMouseOver{
+    background-color: blue;
+}
