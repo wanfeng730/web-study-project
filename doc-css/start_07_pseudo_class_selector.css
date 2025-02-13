@@ -34,6 +34,11 @@ div>p:first-child{
     color: red;
 }
 
+div{
+    background-color:darkblue;
+    border: 1px white solid;
+}
+
 
 
 

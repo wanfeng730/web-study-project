@@ -45,8 +45,17 @@ title.innerText = text;
 // 修改元素内容，识别html标签（推荐使用）
 desc.innerHTML = new Date();
 
-// 修改元素属性
+// 修改元素自带的属性
 a1.href = "http://www.baidu.com";
+
+// 获取元素自定义的属性
+console.log(a1.getAttribute('data-tel'));
+
+// 修改元素自定义的属性
+// H5规范：自定义属性名以data-开头，例如data-tel。以data-开头的属性会被html存放到dataset中
+a1.setAttribute('data-tel', 'update-1123')
+console.log(a1.getAttribute('data-tel'));
+console.log(a1.dataset);
 
 // 修改表单元素属性：输入框内容
 var input1 = document.getElementById("input1");
@@ -54,7 +63,6 @@ input1.value = "update-value";
 
 // 修改元素样式（行内样式）
 title.style.backgroundColor = 'blue';
-
 
 // 事件三要素：事件源、事件类型，事件处理函数
 // 按钮点击事件
