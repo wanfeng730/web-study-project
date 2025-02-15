@@ -41,5 +41,17 @@ div{
 
 
 
+#img-div1{
+    background-color: gray;
+    width: 1000px;
+    height: 500px;
+    display: none;
+}
+#img1{
+    position: absolute;
+    width: 100px;
+}
+
+
 
 

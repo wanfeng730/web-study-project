@@ -78,3 +78,32 @@ ul1.addEventListener('click', function(e){
     // 电脑屏幕的坐标
     console.log(e.screenX, e.screenY);
 })
+
+// 鼠标事件对象，鼠标移动
+var imgDiv1 = document.getElementById('img-div1');
+var img1 = document.getElementById('img1');
+console.log(img1.style);
+imgDiv1.addEventListener('mousemove', function(e){
+    // 修改图片位置(图片需要是绝对定位，position: absolute)
+    var x = e.pageX;
+    var y = e.pageY;
+    console.log('pos:(' + x + ',' +y+ ')');
+    img1.style.top = y + 'px';
+    img1.style.left = x + 'px';
+})
+
+// 键盘事件
+// 案件按下时触发
+document.addEventListener('keydown', function(e){
+    console.log('keydown event');
+    console.log(e);
+    // 获取按键键位
+    console.log(e.key);
+    // 获取键位编码ascii（开发中常用该属性区分键位）
+    console.log(e.keyCode);
+})
+// 按键弹起时触发
+document.addEventListener('keyup', function(e){
+    console.log('keyup event');
+    console.log(e);
+})
