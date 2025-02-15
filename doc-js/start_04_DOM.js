@@ -1,4 +1,7 @@
 // Document Object Model: 处理html的文档接口。可以通过接口改变html的结构，内容，样式等
+// 顶级对象为document
+// 作用是操作页面元素
+// 统一W3C标准规范
 
 // 根据id获取元素
 var link1 = document.getElementById('link1');
