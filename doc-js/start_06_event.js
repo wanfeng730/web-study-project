@@ -30,8 +30,51 @@ button1.removeEventListener('click', func2);
 var input1 = document.getElementById('input1');
 input1.onclick = function(e) {
     console.log(e);
-    // 事件对象的常用属性和方法
-
+    
 }
 
+// 事件对象的常用属性和方法
+var div1 = document.getElementById('divLevel1');
+div1.addEventListener('click', function(e){
+    // 获取触发事件的元素
+    console.log(e.target);
+    // 获取事件类型
+    console.log(e.type);
+    // 阻止默认行为(标准写法)，例如链接跳转
+    e.preventDefault();
+    // 阻止冒泡（事件不会再向上级传播）
+    // 意义：冒泡行为有好处也会有坏处，合理利用阻止冒泡的方式可以实现特定的需求
+    e.stopPropagation();
+});
 
+// 事件委托，在jQuery中称为事件委派
+// 原理：不给每个子节点设置事件函数，而是将时间统一设置在父节点上，利用冒泡原理即可实现所有子节点也设置了这个事件函数的效果
+// 只操作了一次DOM，明显提高了性能
+var ul1 = document.querySelector('.ul1');
+ul1.addEventListener('click', function(e){
+    console.log(e.target);
+    e.target.style.backgroundColor = 'blue';
+})
+
+// 常用鼠标事件
+// contextmenu: 右键菜单
+ul1.addEventListener('contextmenu', function(e){
+    // 阻止contextmenu事件的行为
+    e.preventDefault();
+});
+// selectstart：选中文字
+ul1.addEventListener('selectstart', function(e){
+    e.preventDefault();
+})
+
+// 鼠标事件对象
+ul1.addEventListener('click', function(e){
+    // PointerEvent 
+    console.log(e);
+    // 浏览器窗口可视区的坐标(可以看到的视区的左上角为0,0)
+    console.log(e.clientX, e.clientY);
+    // 文档页面的坐标（整个页面左上角为0,0）
+    console.log(e.pageX, e.pageY);
+    // 电脑屏幕的坐标
+    console.log(e.screenX, e.screenY);
+})
