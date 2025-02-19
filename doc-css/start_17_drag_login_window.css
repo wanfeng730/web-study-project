@@ -1,0 +1,38 @@
+html{
+    background-color: white;
+}
+
+.login{
+    background-color: gray;
+    width: 30em;
+    height: 15em;
+    display: block;
+    left: 50%;
+    top: 50%;
+    transform: translate(50%, 50%);
+}
+
+.login-title{
+    text-align: center;
+    align-content: center;
+    height: 3em;
+}
+
+.login-form{
+    
+}
+
+.login-form-item{
+    height: 4em;
+    text-align: center;
+}
+
+.login-label{
+    height: 4em;
+    width: 5em;
+}
+
+.login-input{
+    height: 3em;
+    width: 20em;
+}
