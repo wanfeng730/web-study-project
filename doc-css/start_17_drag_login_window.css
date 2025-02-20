@@ -3,19 +3,33 @@ html{
 }
 
 .login{
-    background-color: gray;
+    /* background-color: gray; */
+    border: 1px gray solid;
+    border-radius: 10px;
     width: 30em;
-    height: 15em;
-    display: block;
+    height: 18em;
+    display: none;
     left: 50%;
     top: 50%;
     transform: translate(50%, 50%);
 }
 
 .login-title{
+    display: flex;
     text-align: center;
     align-content: center;
     height: 3em;
+    padding-left: 200px;
+}
+
+.login-title-content{
+    text-align: center;
+    height: 30px;
+    margin-top: 18px;
+}
+
+.login-close{
+    margin-left: 195px;
 }
 
 .login-form{
@@ -25,14 +39,31 @@ html{
 .login-form-item{
     height: 4em;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
 }
 
 .login-label{
-    height: 4em;
+    height: 1em;
+    line-height: 1em;
     width: 5em;
+    text-align: right;
+    vertical-align: auto;
 }
 
 .login-input{
     height: 3em;
     width: 20em;
+    border: 1px gainsboro solid;
+    border-radius: 5px;
+}
+
+.login-button{
+    height: 3em;
+    width: 10em;
+    background-color: white;
+    border: 1px gainsboro solid;
+    border-radius: 3px;
 }

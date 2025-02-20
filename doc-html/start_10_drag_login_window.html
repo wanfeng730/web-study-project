@@ -7,26 +7,28 @@
     <title>drag_login_window</title>
 </head>
 <body>
-    <button>点击，弹出登录框</button>
+    <button id="showLoginButton">点击，弹出登录框</button>
     <div class="login">
         <div class="login-title">
-            登录会员
-            <span><a href="">关闭</a></span>
+            <div class="login-title-content">登录会员</div>
+            <span class="login-close"><a href="">×</a></span>
         </div>
         <div class="login-form">
             <div class="login-form-item">
-                <label class="login-label">用户名：</label>
-                <input class="login-input" type="text" placeholder="请输入用户名">
+                <div class="login-label">用户名：</div>
+                <input class="login-input" type="text" placeholder=" 请输入用户名">
             </div>
             <div class="login-form-item">
-                <label class="login-label">密码：</label>
-                <input class="login-input" type="password" placeholder="请输入密码">
+                <div class="login-label">密码：</div>
+                <input class="login-input" type="password" placeholder=" 请输入密码">
             </div>
-            <div>
+            <div class="login-form-item">
                 <button class="login-button">登录</button>
             </div>
         </div>
     </div>
     <div id="zgc"></div>
+
+    <script src="../doc-js/start_13_drag_login_window.js"></script>
 </body>
 </html>
