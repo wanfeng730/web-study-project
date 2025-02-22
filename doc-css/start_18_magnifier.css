@@ -1,0 +1,47 @@
+.img-div{
+    width: fit-content;
+    height: fit-content;
+    /* 弹性盒子布局消除多余的空白部分 */
+    display: flex;
+    position: relative;
+    top: 13px;
+    left: 30px;
+}
+
+#img{
+    width: 300px;
+
+}
+
+.mask{
+    display: none;
+
+    width: 100px;
+    height: 100px;
+    background-color:cornflowerblue;
+    border: 1px blue solid;
+    /* 父元素.img-div是相对定位，mask设置的坐标值是以父元素左上角为起点 */
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    opacity: 0.3;
+    cursor: move;
+}
+
+.mag-div{
+    width: 500px;
+    height: 500px;
+    background-color: pink;
+    position: absolute;
+    top: 0px;
+    left: 310px;
+    border: 1px solid black;
+    display: none;
+    overflow: hidden;
+}
+
+#mag-img{
+    width: 1500px;
+    position: absolute;
+}
+
