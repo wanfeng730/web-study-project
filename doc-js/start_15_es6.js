@@ -121,3 +121,43 @@ let func2 = (s1, s2, ...other) => {
 }
 func2(1, 4, 'wanfeng', 'CMN');
 
+
+// Promise 同步和异步
+// resolve为成功的处理函数，reject为失败拒绝时的处理函数
+const promise = new Promise((resolve, reject) => {
+    // resolve，在成功时将成功的数据传值给resolve函数
+    // resolve('wanfeng');
+    reject('error info reject!');
+});
+
+// then方法
+//      第一个函数参数接收resolve函数中成功的数据处理
+//      第二个函数参数接收reject函数失败的数据处理，如果没有定义第二个函数，则为找catch
+// catch方法接收reject函数中失败的数据，并进行同步的处理
+promise.then(data => {
+    console.log(data);
+}, err => {
+    console.log(`then second func: ${err}`);
+    throw new Error('任务失败终止!');
+}).catch(err => {
+    console.log(`carch func: ${err}`);
+})
+
+// Promise异步任务嵌套同步处理
+promise.then(data => {
+    console.log(data);
+    return new Promise((resolve, reject) => {
+        resolve('wanfeng success~');
+    });
+}).then(data2 => {
+    // data2接收上一个then函数返回的Promise对象的执行结果
+    console.log(data2);
+    return new Promise((resolve, reject) => {
+        resolve('wanfeng SUCCESS~');
+    });
+}).then(data3 => {
+    // data3接收上一个then函数返回的Promise对象的执行结果
+    console.log(data3);
+})
+
+
