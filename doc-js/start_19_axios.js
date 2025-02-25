@@ -1,10 +1,5 @@
 // axios
 
-
-
-// var p1 = await axios.get('http://localhost:7301/xhs/article/get_all');
-
-
 (async () => {
     // 基地址配置
     var xhsApp = axios.create({baseURL:'http://localhost:7301/xhs'});
