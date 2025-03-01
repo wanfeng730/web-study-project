@@ -9,7 +9,27 @@
 <body>
     <!-- 1. root容器的代码依然符合html规范，只不过混入了一些特殊的Vue语法 -->
     <!-- 2. root容器的代码倍称为 Vue模版 -->
-    <div id="root">Hello, {{username}}</div>
+    <div id="root">
+        <!-- 插值语法：用于替换元素文本内容中的变量, 本质就是js语句 -->
+        <div>Hello, {{username}}</div>
+
+        <!-- 指令语法：用于替换元素属性值 -->
+        <a v-bind:href="url">bilibili 干杯~</a>
+        <!-- 指令语法: 简写 -->
+        <a :href="url">bilibili 干杯~</a>
+        <!-- 指令语法: 本质就是js语句，可以执行一些表达式或函数 -->
+        <a :href="url.toUpperCase()">bilibili 干杯~</a>
+    
+        <!-- 单向数据绑定 v-bind：vue数据修改后会同步给页面的变量，但页面变量不会影响到vue数据 -->
+        <!-- 双向数据绑定 v-model: vue数据修改后会同步给页面的变量，页面变量也会同步给vue数据（只允许在表单类元素中生效，即可输入的元素）即默认绑定的时value属性 -->
+        <div>
+            单向数据绑定：
+            <input type="text" :value="var1">
+            双向数据绑定：
+            <input type="text" v-model="var1">  
+        </div>
+    
+    </div>
        
 
 

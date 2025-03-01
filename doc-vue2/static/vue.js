@@ -11926,6 +11926,8 @@
 
   extend(Vue, vca);
   Vue.effect = effect;
+  // 开启Vue devtools插件（浏览器插件）
+  Vue.config.devtools = true;
 
   return Vue;
 
