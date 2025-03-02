@@ -7,15 +7,29 @@ console.log(Vue.config);
 var vue = new Vue({
     // 指定Vue加载的元素，使用选择器表示
     el: '#root',
+
     // 定义一些自定义的数据，在el元素中使用，data变量用双花括号使用，例如 {{username}}
     // （推荐写法）data为一个函数，返回一个对象，对象中定义在自定义的变量
-    // 不能写箭头函数，this的指向会变成window
     data(){
         return{
             username: '晚风A',
             unitCode: 'SimpleProto',
             url: 'https://www.bilibili.com',
             var1: 56
+        }
+    },
+    
+    //定义一些函数,事件处理函数
+    //不能写箭头函数，this的指向会变成window
+    methods:{
+        showInfo(event){
+            console.log(event);
+            // this指向Vue实例对象
+            console.log(this);
+        },
+        showDetail(event, id){
+            console.log(id);
+            console.log(event);
         }
     }
 

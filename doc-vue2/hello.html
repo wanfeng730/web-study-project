@@ -28,11 +28,30 @@
             双向数据绑定：
             <input type="text" v-model="var1">  
         </div>
+
+        <!-- 绑定事件,传参可以用括号，相当于js调用函数的语句 -->
+        <div>
+            <!-- 这一行是普通写法<button v-on:click="showInfo">showInfo</button> -->
+            <button @click="showInfo">showInfo</button>
+            <!-- $event用于传入事件对象 -->
+            <button @click="showDetail($event, 66)">showDetail</button>
+            <!-- 事件修饰符prevent：阻止默认行为 -->
+            <button @click.prevent="showInfo">showInfo-prevent</button>
+            <!-- 事件修饰符stop：阻止冒泡（即防止同时触发父元素的事件） -->
+            <button @click.stop="showInfo">showInfo-stop</button>
+            <!-- 事件修饰符once：事件只执行一次 -->
+            <button @click.once="showInfo">showInfo-once</button>
+            <!-- 事件修饰符capture：事件使用捕获模式（即从父元素开始执行事件） -->
+            <button @click.capture="showInfo">showInfo-once</button>
+            <!-- 事件修饰符passive：事件默认行为立即执行，无需等待事件回调执行完毕 -->
+            <button @click.passive="showInfo">showInfo-once</button>
+        </div>
     
     </div>
        
 
 
     <script src="static/hello.js"></script>
+    <!-- <script src="static/data_proxy.js"></script> -->
 </body>
 </html>
