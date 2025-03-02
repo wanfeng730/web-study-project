@@ -5,6 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="static/vue.js"></script>
+
+    <style>
+        div{
+            margin-bottom: 20px;
+            border-left: 4px solid pink;
+            padding: 10px;
+        }
+        #root
+        {
+            border: none;
+        }
+        button{
+            background-color: pink;
+            width: 160px;
+            height: 40px;
+            border: 1px solid gray;
+            border-radius: 10px;
+        }
+        input{
+            height: 25px;
+            border-radius: 5px;
+            border: 2px solid skyblue;
+        }
+    </style>
 </head>
 <body>
     <!-- 1. root容器的代码依然符合html规范，只不过混入了一些特殊的Vue语法 -->
@@ -35,6 +59,10 @@
             <button @click="showInfo">showInfo</button>
             <!-- $event用于传入事件对象 -->
             <button @click="showDetail($event, 66)">showDetail</button>
+        </div>
+
+        <!-- 事件修饰符 -->
+        <div>
             <!-- 事件修饰符prevent：阻止默认行为 -->
             <button @click.prevent="showInfo">showInfo-prevent</button>
             <!-- 事件修饰符stop：阻止冒泡（即防止同时触发父元素的事件） -->
@@ -45,8 +73,25 @@
             <button @click.capture="showInfo">showInfo-once</button>
             <!-- 事件修饰符passive：事件默认行为立即执行，无需等待事件回调执行完毕 -->
             <button @click.passive="showInfo">showInfo-once</button>
+
+            <!-- 多个修饰符可以同时使用，顺序无关 -->
+            <button @click.stop.prevent="showInfo">showInfo-stop-prevent</button>
         </div>
     
+        <!-- 键盘事件 -->
+        <div>
+            <!-- 键盘抬起事件 -->
+            <input type="text" placeholder="键盘抬起事件" @keyup="keyupFunc">
+            <!-- 键盘抬起Enter键事件 -->
+            <input type="text" placeholder="键盘抬起Enter键事件" @keyup.enter="keyupFunc">
+            <!-- 键盘抬起Delete键事件 -->
+            <!-- 常用的键有 回车Enter、删除delete、退出esc、空格space、换行tab、上up、下down、左left、右right、切换大小写cap-lock -->
+            <input type="text" placeholder="键盘抬起Delete键事件" @keyup.delete="keyupFunc">
+            <!-- （特殊）键盘按下tab键事件,需要配合keydown使用才能生效（tab自带的行为会把焦点切换到下一个输入框，失去焦点后无法触发事件 -->
+            <!-- 五个自带系统功能的修饰键需要在keydown使用：tab、ctrl、alt、shift、meta -->
+            <input type="text" placeholder="键盘按下Tab键事件" @keydown.tab="keyupFunc">
+        </div>
+
     </div>
        
 

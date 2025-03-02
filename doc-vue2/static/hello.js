@@ -1,7 +1,7 @@
 // 设置为 false 以阻止 vue 在启动时生成生产提示
 Vue.config.productionTip = false;
 
-console.log(Vue.config);
+console.log('Vue.config:', Vue.config);
 
 // 创建vue实例
 var vue = new Vue({
@@ -18,7 +18,7 @@ var vue = new Vue({
             var1: 56
         }
     },
-    
+
     //定义一些函数,事件处理函数
     //不能写箭头函数，this的指向会变成window
     methods:{
@@ -30,12 +30,16 @@ var vue = new Vue({
         showDetail(event, id){
             console.log(id);
             console.log(event);
+        },
+        keyupFunc(event){
+            console.log(event);
+            console.log(event.keyCode, event.key);
         }
     }
 
 });
 // 构建vue对象后 页面上的DevTools插件已经可以生效
-console.log(vue);
+console.log('Vue实例对象:', vue);
 
 // 获取vue实例中定义的数据
 console.log(vue.username);
