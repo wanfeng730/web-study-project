@@ -15,7 +15,9 @@ var vue = new Vue({
             username: '晚风A',
             unitCode: 'SimpleProto',
             url: 'https://www.bilibili.com',
-            var1: 56
+            var1: 56,
+            firstName: '晩',
+            lastName: '风'
         }
     },
 
@@ -34,6 +36,9 @@ var vue = new Vue({
         keyupFunc(event){
             console.log(event);
             console.log(event.keyCode, event.key);
+        },
+        getFullName(){
+            return this.firstName + '·' + this.lastName;
         }
     }
 

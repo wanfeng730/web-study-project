@@ -12,8 +12,7 @@
             border-left: 4px solid pink;
             padding: 10px;
         }
-        #root
-        {
+        #root{
             border: none;
         }
         button{
@@ -90,6 +89,13 @@
             <!-- （特殊）键盘按下tab键事件,需要配合keydown使用才能生效（tab自带的行为会把焦点切换到下一个输入框，失去焦点后无法触发事件 -->
             <!-- 五个自带系统功能的修饰键需要在keydown使用：tab、ctrl、alt、shift、meta -->
             <input type="text" placeholder="键盘按下Tab键事件" @keydown.tab="keyupFunc">
+        </div>
+
+        <div>
+            <!-- 数据发生变化后，vue模版会重新解析渲染 -->
+            姓：<input type="text" v-model="firstName"> <br>
+            名：<input type="text" v-model="lastName"> <br>
+            姓名：<span>{{getFullName()}}</span>
         </div>
 
     </div>
