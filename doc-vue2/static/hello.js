@@ -37,8 +37,30 @@ var vue = new Vue({
             console.log(event);
             console.log(event.keyCode, event.key);
         },
-        getFullName(){
+        // 在html中使用：{{getFullNameMethod()}}
+        getFullNameMethod(){
             return this.firstName + '·' + this.lastName;
+        }
+    },
+
+    // 定义计算属性
+    computed:{
+        // html中使用：{{fullName}}，即调用get函数
+        // get调用时机：初次调用时、所以依赖的数据发生变化时
+        fullName:{
+            get(){
+                return this.firstName + '·' + this.lastName;
+            },
+            set(value){
+                console.log("fullName setter...");
+                this.firstName = value;
+                this.lastName = value;
+            }
+        },
+        // 简洁写法，即当做默认的getter方法
+        fullName2(){
+            console.log('fullName2 getter...');
+            return this.firstName + this.lastName;
         }
     }
 
