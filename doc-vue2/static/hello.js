@@ -17,7 +17,11 @@ var vue = new Vue({
             url: 'https://www.bilibili.com',
             var1: 56,
             firstName: '晩',
-            lastName: '风'
+            lastName: '风',
+            archive:{
+                id: 1,
+                title: 'archive001'
+            }
         }
     },
 
@@ -40,10 +44,13 @@ var vue = new Vue({
         // 在html中使用：{{getFullNameMethod()}}
         getFullNameMethod(){
             return this.firstName + '·' + this.lastName;
+        },
+        increaseId(){
+            this.archive.id++;
         }
     },
 
-    // 定义计算属性
+    // 定义计算属性：必须返回一个值，无法开启异步任务返回数据
     computed:{
         // html中使用：{{fullName}}，即调用get函数
         // get调用时机：初次调用时、所以依赖的数据发生变化时
@@ -55,7 +62,7 @@ var vue = new Vue({
                 console.log("fullName setter...");
                 this.firstName = value;
                 this.lastName = value;
-            }
+            } 
         },
         // 简洁写法，即当做默认的getter方法
         fullName2(){
@@ -64,7 +71,7 @@ var vue = new Vue({
         }
     },
 
-    // 监视属性
+    // 监视属性：可以不用返回值，直接修改数据即可
     watch:{
         lastName:{
             // 设置为初始时候立即执行handler
@@ -72,10 +79,39 @@ var vue = new Vue({
             handler(newValue, oldValue){
                 console.log(`watch lastName handler newValue=${newValue} oldValue=${oldValue}`);
             }
+        },
+        // 监视对象内的属性值,需要采用原始的字符串形式防止报错
+        'archive.id': {
+            handler(newValue, oldValue){
+                console.log(`watch archive.id handler newValue=${newValue} oldValue=${oldValue}`);
+            }
+        },
+        // 深度监视
+        archive:{
+            // 是否开启深度监视
+            deep: true,
+            handler(newValue, oldValue){
+                console.log(`watch archive(深度监视) handler newValue=${newValue} oldValue=${oldValue}`);
+            }
+        },
+        // 监视简写，即默认的handler函数
+        lastName(newValue, oldValue){
+            console.log(`watch archive(监视简写) handler newValue=${newValue} oldValue=${oldValue}`);
+            setTimeout(() => {
+                console.log(`监视异步任务执行 newValue=${newValue} oldValue=${oldValue} ...`);
+            }, 1000);
         }
     }
 
 });
+
+// 监视属性简写
+vue.$watch('firstName', {
+    handler(newValue, oldValue){
+        console.log(`watch firstName ${newValue} ${oldValue}`);
+    }
+})
+
 
 // // 获取vue实例中定义的数据
 // console.log(vue.username);
@@ -116,11 +152,5 @@ Object.defineProperty(data1, 'title', {
 // console.log(data1);
 
 
-// 监视属性简写
-vue.$watch('firstName', {
-    handler(newValue, oldValue){
-        console.log(`watch firstName ${newValue} ${oldValue}`);
-    }
-})
 
 
