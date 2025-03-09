@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BindStyle</title>
+    <link rel="stylesheet" href="css/default.css">
+    <script src="static/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <!-- 动态绑定class 以类名配置布尔值表示这个类是否开启-->
+        <div class="d1" :class="textClassObj">Div</div>
+        
+        <div :class="textClassName">Div {{title}}</div>
+
+        <div>
+            <input type="text" value="test" :style="styleObject">
+        </div>
+        
+        <div>
+            <button class="b1" @click="changeTextRed">change to red</button>
+            <button class="b1" @click="changeTextBlue">change to blue</button>
+        </div>
+
+        <div>
+            <button @click="changeIsShow"> change is show</button>
+            <!-- 条件渲染 v-show 传值为boolean值， 是否显示，不显示时不会删除元素  -->
+            <span v-show="isShow % 2 == 1"> test V show</span>
+            <!-- 条件渲染 v-if 传值为boolean值， 是否显示，不显示时会删除元素  -->
+            <!-- 若使用if-else接口，不允许在中间被打断，否则无效 -->
+            <span v-if="isShow % 4 == 1"> text V if 1</span>
+            <span v-else-if="isShow % 4 == 2"> text V if 2</span>
+            <span v-else-if="isShow % 4 == 3"> text V if 3</span>
+            <span v-else> finish</span>
+            
+        </div>
+        
+    </div>
+
+    <script src="static/bind_style.js"></script>
+</body>
+</html>

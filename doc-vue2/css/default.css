@@ -1,0 +1,32 @@
+div{
+    margin-bottom: 20px;
+    border-left: 4px solid pink;
+    padding: 10px;
+}
+#root{
+    border: none;
+}
+button{
+    background-color: pink;
+    width: 160px;
+    height: 40px;
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+input{
+    height: 25px;
+    border-radius: 5px;
+    border: 2px solid skyblue;
+}
+span{
+    font-weight: bold;
+    font-style: italic;
+    background-color: gray;
+}
+
+.buleClass{
+    color: blue;
+}
+.redClass{
+    color: red;
+}
