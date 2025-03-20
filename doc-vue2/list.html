@@ -26,6 +26,24 @@
                 <li v-for="(value, key) in archive" :key="key">Key={{key}} Value={{value}}</li>
             </ul>
         </div>
+
+        <div>
+            搜索姓名：<input type="text" placeholder="请输入名字" v-model="searchNameContent">
+            <ul>
+                <!-- v-for 遍历数组，同时自动生成相同数量的元素 (p, index) 分别接收元素和索引-->
+                <!-- :key 指定元素的标识，必须写！！！ 非常不建议使用index作为key -->
+                <li v-for="(p, index) in filterPersonList" :key="p.id">（{{index}}） {{p.id}}-{{p.name}}-{{p.age}}</li>
+            </ul>
+        </div>
+
+        <div>
+            搜索id：<input type="text" placeholder="请输入id" v-model="searchIdContent">
+            <ul>
+                <!-- v-for 遍历数组，同时自动生成相同数量的元素 (p, index) 分别接收元素和索引-->
+                <!-- :key 指定元素的标识，必须写！！！ 非常不建议使用index作为key -->
+                <li v-for="(p, index) in filterIdList" :key="p.id">（{{index}}） {{p.id}}-{{p.name}}-{{p.age}}</li>
+            </ul>
+        </div>
         
     </div>
     
