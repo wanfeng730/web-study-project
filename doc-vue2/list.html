@@ -37,11 +37,14 @@
         </div>
 
         <div>
-            搜索id：<input type="text" placeholder="请输入id" v-model="searchIdContent">
+            搜索id：<input type="text" placeholder="请输入id" v-model="searchIdContent"> <br>
+            <button @click="sortType = 1">年龄升序</button>
+            <button @click="sortType = 2">姓名降序</button>
+            <button @click="sortType = 0">reset</button>
             <ul>
                 <!-- v-for 遍历数组，同时自动生成相同数量的元素 (p, index) 分别接收元素和索引-->
                 <!-- :key 指定元素的标识，必须写！！！ 非常不建议使用index作为key -->
-                <li v-for="(p, index) in filterIdList" :key="p.id">（{{index}}） {{p.id}}-{{p.name}}-{{p.age}}</li>
+                <li v-for="(p, index) in showPersonList" :key="p.id">（{{index}}） {{p.id}}-{{p.name}}-{{p.age}}</li>
             </ul>
         </div>
         

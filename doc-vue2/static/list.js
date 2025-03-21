@@ -25,7 +25,8 @@ const vue = new Vue({
         },
         searchNameContent: '',
         filterPersonList: [],
-        searchIdContent: ''
+        searchIdContent: '',
+        sortType: 0
     },
     methods:{
         
@@ -33,12 +34,21 @@ const vue = new Vue({
     computed:{
         // 计算属性实现过滤，定义过滤后的列表=全部数据中包含搜索内容的结果
         // get调用时机：初次调用时、所以依赖的数据发生变化时
-        filterIdList: {
+        showPersonList: {
             get(){
-                console.log('compute filterIdList');
-                return this.personList.filter((item) => {
+                console.log('compute showPersonList');
+                list = this.personList.filter((item) => {
                     return item.id.indexOf(this.searchIdContent) != -1;
-                })
+                });
+                // 年龄升序
+                if(this.sortType == 1){
+                    list = list.sort((p1, p2) => p1.age - p2.age);
+                }
+                // 姓名降序
+                if(this.sortType == 2){
+                    list = list.sort((p1, p2) => p2.name.localeCompare(p1.name));
+                }
+                return list;
             }
         }
     },
