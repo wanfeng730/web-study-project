@@ -29,7 +29,15 @@ const vue = new Vue({
         sortType: 0
     },
     methods:{
-        
+        // 修改对象时把整个对象赋值后，会进行新对象的创建，此时vue不会监测到数据改变
+        updateObject(){
+            console.log('updateObject');
+            this.personList[0] = {
+                id: '001',
+                name: '晚风-UPDATE',
+                age: 26
+            };
+        }
     },
     computed:{
         // 计算属性实现过滤，定义过滤后的列表=全部数据中包含搜索内容的结果
