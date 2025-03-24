@@ -6,10 +6,23 @@
     <title>VueDataWatch</title>
     <link rel="stylesheet" href="css/dark-mode.css">
     <link rel="stylesheet" href="css/default.css">
+    <script src="static/vue.js"></script>
 </head>
 <body>
     
     <div id="root">
+        <h2>档号：{{archive.archivalId}}</h2>
+        <h2>题名：{{archive.title}}</h2>
+        <h2 v-if="archive.type">类型：{{archive.type}}</h2>
+        <button @click="setType">设置类型</button>
+        <div>
+            <h2>所在路径</h2>
+            <ul>
+                <li v-for="(path, index) in archive.linkPaths" :key="path">{{path}}</li>
+            </ul>
+            <button @click="updateLinkPaths">更新所在路径</button>
+        </div>
+    
         
         
     </div>
