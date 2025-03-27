@@ -16,7 +16,7 @@ var vue = new Vue({
     
     methods:{
         submitInfo(){
-            // 获取表单数据，转为json字符串格式
+            // 获取表单数据（即vue代理的数据），转为json字符串格式
             body = JSON.stringify(this.formData)
             console.log(body);
         }
