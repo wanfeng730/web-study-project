@@ -3,18 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vue2 Template</title>
+    <title>CustomCommand</title>
     <link rel="stylesheet" href="css/dark-mode.css">
     <link rel="stylesheet" href="css/default.css">
     <script src="static/vue.js"></script>
 </head>
 <body>
     <div id="root">
+        <!-- 自定义的指令 -->
+        <!-- 指令和元素成功绑定时调用、指令所在的模版被重新解析时调用 -->
+        <!-- <div v-bigger="89">Content</div> -->
         
-        
+        <input type="text" v-ffbind="ffbindDefaultValue">
         
     </div>
     <!-- 此处修改你的js文件 -->
-    <script src="static/Vue2Template.js"></script>
+    <script src="static/custom_command.js"></script>
 </body>
 </html>
