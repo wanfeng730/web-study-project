@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LifeCycle</title>
+    <link rel="stylesheet" href="css/dark-mode.css">
+    <link rel="stylesheet" href="css/default.css">
+    <script src="static/vue.js"></script>
+</head>
+<body>
+    <!-- Vue 生命周期 -->
+    <!-- 
+        1.new Vue()
+        2.初始化生命周期、事件
+        3.初始化数据监测、数据代理（data中的数据、methods中的方法） 
+        4.解析模版，生成虚拟DOM在内存中，在vue实例的el中（判断vue实例的el元素挂载、判断vue实例的template）
+        5.将el的虚拟DOM转为真实DOM渲染（覆盖）到页面上，所以在此之前对DOM的修改都会被vue渲染覆盖
+        6.页面依赖的数据发生改变，重新渲染
+        7.vue调用销毁 vue.$destroy() （大多数场景下不应该调用销毁方法，建议使用v-if、v-for指令控制元素）
+     -->
+    <div id="root">
+        <div>
+            <h2 :style="{opacity}">晚风学习Vue生命周期</h2>
+        </div>
+        <div>
+            <h2>Number: {{number}}</h2>
+            <button @click="incrNumber">add number</button>
+        </div>
+        <div>
+            <button @click="$destroy()">destroy</button>
+        </div>
+        
+    </div>
+    <!-- 此处修改你的js文件 -->
+    <script src="static/life_cycle.js"></script>
+</body>
+</html>

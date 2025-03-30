@@ -15,7 +15,7 @@ const vue = new Vue({
     },
     // 自定义指令
     directives:{
-        // 自定义指令接收的
+        // 自定义指令接收的参数
         bigger(element, binding){
             console.log('bigger...');
             // 指令所在的真实DOM元素
