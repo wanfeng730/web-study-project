@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ComponentCode</title>
+    <link rel="stylesheet" href="css/dark-mode.css">
+    <link rel="stylesheet" href="css/default.css">
+    <script src="static/vue.js"></script>
+</head>
+<body>
+    <!-- 组件化编程 -->
+    <!-- 
+        解决问题：传统方式编写，html、css、js依赖关系混乱，不好维护。并且代码复用率不高
+        一个组件就是页面中的一个模块，例如导航栏，内容区。它包含该组件所需的html片段、css样式、js交互。
+        每个组件相互独立，互不影响和依赖，耦合性极低。
+        其他页面需要该实现该组件只需要 引入 即可，提高了代码复用率
+
+        模块化：js交互以模块来编写，即分成多个js文件
+        组件化：多个组件独立实现并构成的应用。一个组件中可以有模块化（多个js文件）
+
+        非单文件组件：一个文件中实现了多个组件（.html后缀文件）
+        * 单文件组件：一个文件中只实现了1个组件（.vue后缀文件）
+     -->
+    <div id="root">
+
+        <!-- 使用用户组件 -->
+        <user></user>
+        <!-- 使用搜索组件 -->
+        <search></search>
+        
+    </div>
+    <!-- 此处修改你的js文件 -->
+    <script src="static/component_code.js"></script>
+</body>
+</html>

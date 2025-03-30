@@ -48,6 +48,11 @@ li{
 .redClass{
     color: red;
 }
+.userInfo{
+    border: 1px solid white;
+    border-radius: 10px;
+    width: 300px;
+}
 
 [v-cloak]{
     display: none;
