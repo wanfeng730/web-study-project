@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <!-- 针对IE浏览器的特殊配置，让IE开启最高的渲染级别 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 开启移动端的理想视口 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!-- 配置标签页图标, BASE_URL一般为public目录所在路径 -->
+    <link rel="icon" href="<%=BASE_URL%>favicon.ico">
+    <!-- 网页标题 取的是package.json中name的值 -->
+    <title>
+      <%= htmlWebpackPlugin.options.title %>
+    </title>
+  </head>
+  
+  <body>
+    <!-- 容器 -->
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
