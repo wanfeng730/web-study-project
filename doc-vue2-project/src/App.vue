@@ -2,9 +2,11 @@
 
 <template>
     <div>
-        <span></span>
-        <UserInfo></UserInfo>
-        <Search></Search>
+        <!-- ref属性代表该元素/组件被标记，可用vue.$refs获取所有的ref标记的元素/组件 -->
+        <span ref="span1">span短语内容</span>
+        <UserInfo ref="userinfo"></UserInfo>
+        <Search ref="search"></Search>
+        <button @click="showRef()">输出ref内容</button>
     </div>
 </template>
 
@@ -19,6 +21,12 @@
         data () {
             return {
                 
+            }
+        },
+        methods:{
+            showRef(){
+                console.log(this.$refs);
+                console.log(this.$refs.search);
             }
         },
         components:{
