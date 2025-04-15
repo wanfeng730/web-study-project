@@ -7,6 +7,9 @@
         <UserInfo ref="userinfo"></UserInfo>
         <Search ref="search"></Search>
         <button @click="showRef()">输出ref内容</button>
+
+        <!-- props用于指定传入组件的data数据 -->
+        <UserInfo password="自定义1" :age="14-9"></UserInfo>
     </div>
 </template>
 

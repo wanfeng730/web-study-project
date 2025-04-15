@@ -4,6 +4,8 @@
     <div class="defaultBorderClass">
         <span>用户：{{username}}</span> <br>
         <span>状态：{{status}}</span>
+        <span>密码：{{password}}</span>
+        <span>年龄：{{age}}</span>
         <button @click="showStatus()">提示用户状态</button>
     </div>
 </template>
@@ -22,6 +24,19 @@
             showStatus(){
                 alert(this.status);
             }
+        },
+        // props用于指定传入组件的data数据
+        // props:['username', 'status'],
+        props:{
+            password:{
+                // 属性类型
+                type: String,
+                // 是否必填
+                required: true,
+                // 默认值
+                default: '12345'
+            },
+            age: Number
         }
     }
 </script>
