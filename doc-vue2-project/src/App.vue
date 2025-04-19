@@ -4,42 +4,49 @@
     <div>
         <!-- ref属性代表该元素/组件被标记，可用vue.$refs获取所有的ref标记的元素/组件 -->
         <span ref="span1">span短语内容</span>
+
         <UserInfo ref="userinfo"></UserInfo>
         <Search ref="search"></Search>
+
         <button @click="showRef()">输出ref内容</button>
 
         <!-- props用于指定传入组件的data数据 -->
         <UserInfo password="自定义1" :age="14-9"></UserInfo>
+
+        <UserInfoMixin></UserInfoMixin>
     </div>
 </template>
 
 <script>
-    // 引入组件
-    import UserInfo from './components/UserInfo.vue';
-    import Search from './components/Search.vue';
+// 引入组件
+import UserInfo from './components/UserInfo.vue';
+import Search from './components/Search.vue';
+import UserInfoMixin from './components/UserInfoMixin.vue';
 
-    // 暴露当前组件的属性和方法
-    export default {
-        name: 'App',
-        data () {
-            return {
-                
-            }
-        },
-        methods:{
-            showRef(){
-                console.log(this.$refs);
-                console.log(this.$refs.search);
-            }
-        },
-        components:{
-            UserInfo,
-            Search
+// 暴露当前组件的属性和方法
+export default {
+    name: 'App',
+    data () {
+        return {
+            
         }
+    },
+    methods:{
+        showRef(){
+            console.log(this.$refs);
+            console.log(this.$refs.search);
+        }
+    },
+    components:{
+        UserInfo,
+        Search,
+        UserInfoMixin
     }
+}
 </script>
 
-<style scoped>
+<!-- 根组件配置的样式，需要应用于下级所有组件，此处不用scoped -->
+<style>
     html{
         background: #22252A;
         color: aliceblue;
