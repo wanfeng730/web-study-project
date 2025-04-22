@@ -22,11 +22,14 @@
                 // 属性类型
                 type: String,
                 // 是否必填
-                required: true,
+                required: false,
                 // 默认值
                 default: '12345'
             },
-            age: Number
+            age: {
+                type: Number,
+                required: false
+            }
         },
         // 如果mixin混合里的数据或方法已存在，则不会覆盖
         // 如果是生命周期函数，则都会生效
