@@ -23,7 +23,7 @@ props不要去修改，若必要需求请在data中修改
 示例：doc-vue2-project\src\main.js
 
 ### scoped样式应用范围
-在vue文件中，style代码块若标记了scoped，则该样式指只会应用于当前组件，不会应用到下级组件
+在vue文件中，style代码块若标记了scoped，则该样式指只会应用于当前组件，不会应用到上级组件或下级组件
 示例：doc-vue2-project\src\App.vue
 
 

@@ -2,7 +2,7 @@
 
 <template>
 <div>
-  <TodoItem v-for="(item, index) in todoItemList" :key="item.id" :itemName="item.name" :isDone="item.isDone"></TodoItem>
+  <TodoItem v-for="(item, index) in todoItemList" :key="item.id" :itemData="item" :removeTodoItem="removeTodoItem"></TodoItem>
 </div>
 </template>
 
@@ -13,25 +13,10 @@ export default {
   name: 'TodoList',
   data () {
     return {
-      todoItemList:[
-        {
-          id: '001',
-          name: '事项1',
-          isDone: true
-        },
-        {
-          id: '002',
-          name: '事项2',
-          isDone: false
-        },
-        {
-          id: '003',
-          name: '事项3',
-          isDone: true
-        },
-      ]
+      
     }
   },
+  props:['todoItemList', 'removeTodoItem'],
   components:{
     TodoItem
   }

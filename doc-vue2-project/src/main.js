@@ -1,9 +1,9 @@
 // 引入的是vue.runtime.xxx.js，这种vue是没法解析template配置的，只包含核心功能
 import Vue from 'vue'
 import App from './App.vue'
-import testPlugins from './testPlugins'
-// 引入插件
 
+// 引入插件
+import testPlugins from './testPlugins'
 
 // 关闭Vue生产环境提示
 Vue.config.productionTip = false

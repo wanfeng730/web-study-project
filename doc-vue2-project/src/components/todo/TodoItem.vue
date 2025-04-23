@@ -3,10 +3,10 @@
 <template>
 <div class="item_div">
   <div class="item_content_div">
-    <input type="checkbox" v-model="isDone">
-    <span class="itemContent">{{ itemName }}</span>
+    <input type="checkbox" v-model="itemData.isDone" @click="itemCheckChange(itemData)">
+    <span class="itemContent">{{ itemData.name }}</span>
   </div>
-  <button class="delete_button">删除</button>
+  <button class="delete_button" @click="removeTodoItem(itemData)">删除</button>
 </div>
 </template>
 
@@ -19,14 +19,17 @@ export default {
       // isDone: false
     }
   },
-  props:['itemName', 'isDone']
+  // 接收事项数据
+  props:['itemData', 'removeTodoItem'],
+  methods:{
+    itemCheckChange(itemData){
+      console.log("itemCheckChange itemData:", itemData);
+    }
+  }
 }
 </script>
 
 <style scoped>
-* {
-  font-size: 15px;
-}
 div{
   display: flex;
   flex-direction: row;
@@ -38,15 +41,5 @@ div{
   width: 350px;
   border-bottom: 1px solid gray;
 }
-.item_content_div{
 
-}
-.delete_button{
-  color: white;
-  background-color: orangered;
-  width: 60px;
-  height: 30px;
-  border: 1px solid gray;
-  border-radius: 10px;
-}
 </style>

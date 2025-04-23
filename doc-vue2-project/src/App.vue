@@ -60,7 +60,6 @@ export default {
     /* 全局样式 */
     *{
         font-family: '苹方-简', 'PingFang SC', monospace;
-        font-size: 18px;
     }
 
     div{

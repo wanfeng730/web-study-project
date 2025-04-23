@@ -29,6 +29,16 @@ const vue = new Vue({
         sortType: 0
     },
     methods:{
+        /**
+         Vue 将被侦听的数组的变更方法进行了包裹，所以它们也将会触发视图更新。这些被包裹过的方法包括：
+            push(item)
+            pop(item)
+            shift(item)
+            unshift(item)
+            splice()
+            sort()
+            reverse()
+            */
         // 修改对象时把整个对象赋值后，会进行新对象的创建，此时vue不会监测到数据改变
         updateObject(){
             console.log('updateObject');
