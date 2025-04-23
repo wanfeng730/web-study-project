@@ -14,6 +14,9 @@
         <UserInfo password="自定义1" :age="14-9"></UserInfo>
 
         <UserInfoMixin></UserInfoMixin>
+
+        <!-- 待办事项列表 -->
+        <Todo></Todo>
     </div>
 </template>
 
@@ -22,6 +25,7 @@
 import UserInfo from './components/UserInfo.vue';
 import Search from './components/Search.vue';
 import UserInfoMixin from './components/UserInfoMixin.vue';
+import Todo from './components/todo/Todo.vue';
 
 // 暴露当前组件的属性和方法
 export default {
@@ -40,7 +44,8 @@ export default {
     components:{
         UserInfo,
         Search,
-        UserInfoMixin
+        UserInfoMixin,
+        Todo
     }
 }
 </script>
@@ -59,9 +64,16 @@ export default {
     }
 
     div{
-        margin-bottom: 20px;
-        border-left: 4px solid pink;
-        padding: 10px;
+        /* margin-bottom: 20px; */
+        /* border: 1px solid pink;
+        border-radius: 5px;
+        border-style: dotted; */
+        padding: 5px;
+    }
+    .flex_center_div{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
     }
     #root{
         border: none;
@@ -80,8 +92,6 @@ export default {
     }
     span{
         font-weight: bold;
-        font-style: italic;
-        background-color: gray;
     }
 
     li{
