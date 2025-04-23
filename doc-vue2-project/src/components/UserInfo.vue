@@ -37,7 +37,7 @@
     }
 </script>
 
-<style>
+<style scoped lang="less">
     .defaultBorderClass{
         border: 1px solid white;
         border-radius: 10px;

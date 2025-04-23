@@ -22,3 +22,7 @@ props不要去修改，若必要需求请在data中修改
 用于扩展Vue的功能，插件是一个包含install方法的对象，install方法第一个参数是Vue构造函数，第二个以后得参数是插件使用者传递的数据
 示例：doc-vue2-project\src\main.js
 
+### scoped样式应用范围
+在vue文件中，style代码块若标记了scoped，则该样式指只会应用于当前组件，不会应用到下级组件
+示例：doc-vue2-project\src\App.vue
+
