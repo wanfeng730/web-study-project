@@ -41,4 +41,23 @@ props不要去修改，若必要需求请在data中修改
 1. 实现静态组件：抽取组件，实现静态页面效果
 2. 展示动态数据
 3. 交互，绑定事件监听
-4. 
+
+
+# CSS
+### 引入字体文件
+```css
+@font-face {
+    font-family: AlibabaPuHuiTi_Regular;
+    src: url('D:\\WanfengHome\\fileSpace\\font\\AlibabaPuHuiTi-2-55-Regular.ttf');
+}
+@font-face {
+    font-family: AlibabaPuHuiTi_SemiBold;
+    src: url('D:\\WanfengHome\\fileSpace\\font\\AlibabaPuHuiTi-2-75-SemiBold.ttf');
+}
+@font-face {
+    font-family: 'SiYuanHeiTi_Regular';
+    src: url('D:\\WanfengHome\\fileSpace\\font\\SourceHanSansSC-Regular-2.otf') format('opentype');
+	/* format为字体文件格式，例如ttf格式为truetype、otf格式为opentype */
+}
+```
+
