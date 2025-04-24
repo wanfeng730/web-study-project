@@ -3,7 +3,7 @@
 <template>
 <div class="flex_center_div todo_count_div">
   <div class="flex_center_div">
-    <input type="checkbox" v-model="todoCountData.allSelect">
+    <input type="checkbox" v-model="todoCountData.allSelect" @change="selectAllChange()">
     <span>全选</span>
   </div>
   <div class="flex_center_div">
@@ -13,7 +13,7 @@
     <span class="total_count_span">{{ todoCountData.totalCount }}</span>
   </div>
   <div>
-    <button id="clearAllButton" class="delete_button">清除已完成任务</button>
+    <button id="clearAllButton" class="delete_button" @click="removeAllItems()">清除已完成任务</button>
   </div>
 </div>
 </template>
@@ -29,7 +29,7 @@ export default {
   methods:{
 
   },
-  props:['todoCountData']
+  props:['todoCountData', 'removeAllItems', 'selectAllChange']
 }
 </script>
 

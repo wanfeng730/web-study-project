@@ -17,6 +17,8 @@
 
         <!-- 待办事项列表 -->
         <Todo></Todo>
+
+        <button @click="testArrayReduceFunction()">测试数组的Reduce方法</button>
     </div>
 </template>
 
@@ -32,13 +34,38 @@ export default {
     name: 'App',
     data () {
         return {
-            
+            todoItemList:[
+                {
+                    id: '001',
+                    name: '事项1',
+                    isDone: true
+                },
+                {
+                    id: '002',
+                    name: '事项2',
+                    isDone: false
+                },
+                {
+                    id: '003',
+                    name: '事项3',
+                    isDone: true
+                },
+            ]
         }
     },
     methods:{
         showRef(){
             console.log(this.$refs);
             console.log(this.$refs.search);
+        },
+        testArrayReduceFunction(){
+            // finalRes是reduce函数的最终返回值，即最后一次遍历的返回值
+            var finalRes = this.todoItemList.reduce((pre, currenItem)=>{
+                // pre是上一次遍历函数的返回值， currentItem是遍历当前的数组元素
+                console.log(`pre=${pre}, current=`, currenItem);
+                return pre + 1;
+            }, 0); // 0 为初始值，即遍历第一次时的pre值
+            console.log('reduce function final result: ', finalRes);
         }
     },
     components:{

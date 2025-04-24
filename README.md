@@ -1,6 +1,16 @@
 # web-study-project
 WEB开发学习项目
 
+# Array API
+### Array.reduce 数组统计
+```javascript
+// finalRes是reduce函数的最终返回值，即最后一次遍历的返回值
+var finalRes = this.todoItemList.reduce((pre, currenItem)=>{
+    // pre是上一次遍历函数的返回值， currentItem是遍历当前的数组元素
+    console.log(`pre=${pre}, current=`, currenItem);
+    return pre + 1;
+}, 0); // 0 为初始值，即遍历第一次时的pre值
+```
 
 
 # Vue
