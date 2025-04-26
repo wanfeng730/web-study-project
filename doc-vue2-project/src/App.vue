@@ -15,6 +15,9 @@
 
         <UserInfoMixin></UserInfoMixin>
 
+        <!-- 自定义事件 绑定在vc上，可通过vc.$emit(事件名)触发这个时间 -->
+        <UserInfoCustomEvent ref="userInfoCustomEvent" v-on:hahaha="hahahaFunc" :getCustomEventData="getCustomEventData"></UserInfoCustomEvent>
+
         <!-- 待办事项列表 -->
         <Todo></Todo>
 
@@ -28,6 +31,7 @@ import UserInfo from './components/UserInfo.vue';
 import Search from './components/Search.vue';
 import UserInfoMixin from './components/UserInfoMixin.vue';
 import Todo from './components/todo/Todo.vue';
+import UserInfoCustomEvent from './components/UserInfoCustomEvent.vue';
 
 // 暴露当前组件的属性和方法
 export default {
@@ -66,13 +70,27 @@ export default {
                 return pre + 1;
             }, 0); // 0 为初始值，即遍历第一次时的pre值
             console.log('reduce function final result: ', finalRes);
+        },
+        getCustomEventData(value){
+            console.log('getCustomEventData: ', value);
+        },
+        hahahaFunc(username){
+            console.log(username + '：哈哈哈哈哈哈哈哈哈哈');
         }
     },
     components:{
         UserInfo,
         Search,
         UserInfoMixin,
-        Todo
+        Todo,
+        UserInfoCustomEvent
+    },
+    mounted(){
+        console.log('App mounted');
+        // 获取组件实例对象，设置自定义事件被触发时执行的函数
+        this.$refs.userInfoCustomEvent.$on('hahaha', () => {
+            console.log('hahaha事件回调');
+        })
     }
 }
 </script>
@@ -142,6 +160,10 @@ export default {
         border: 1px solid white;
         border-radius: 10px;
         width: 300px;
+    }
+    .divMargin{
+        margin-top: 5px;
+        margin-bottom: 5px;
     }
 
     [v-cloak]{

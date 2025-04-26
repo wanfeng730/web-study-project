@@ -1,7 +1,7 @@
 <!-- 用户信息组件 -->
 
 <template>
-    <div class="defaultBorderClass">
+    <div class="defaultBorderClass divMargin">
         <span>用户：{{username}}</span> <br>
         <span>状态：{{status}}</span><br>
         <span>密码：{{password}}</span><br>
@@ -38,10 +38,5 @@
 </script>
 
 <style scoped lang="less">
-    .defaultBorderClass{
-        border: 1px solid white;
-        border-radius: 10px;
-        width: 300px;
-    }
 </style>
 

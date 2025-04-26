@@ -1,7 +1,7 @@
 <!--  -->
 
 <template>
-<div class="defaultBorderClass">
+<div class="defaultBorderClass divMargin">
     <span>组件名称：{{componentName}}</span><br>
     <span>用户：{{username}}</span> <br>
     <span>状态：{{status}}</span><br>
@@ -14,6 +14,11 @@ import { userConfig } from '@/UserMethods';
 
 export default {
     name: 'UserInfoMixin',
+    data(){
+        return{
+            componentName: 'mixin混入'
+        }
+    },
     mixins: [userConfig]
 }
 </script>
