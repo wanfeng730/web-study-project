@@ -19,23 +19,8 @@ export default {
   name: 'Todo',
   data () {
     return {
-      todoItemList:[
-        {
-          id: '001',
-          name: '事项1',
-          isDone: true
-        },
-        {
-          id: '002',
-          name: '事项2',
-          isDone: false
-        },
-        {
-          id: '003',
-          name: '事项3',
-          isDone: true
-        },
-      ]
+      // 若localStorage为null，则使用空数组
+      todoItemList: localStorage.getItem('todoItemList') ? JSON.parse(localStorage.getItem('todoItemList')) : []
     }
   },
   methods:{
@@ -71,7 +56,8 @@ export default {
   },
   computed:{
     // 获得排序后的事项列表
-    sortedTodoItemList(){
+    sortedTodoItemList() {
+      console.log('computed sortedTodoItemList');
       return this.todoItemList.sort((item1, item2) => item1.isDone - item2.isDone);
     },
     // 统计待办事项
@@ -79,7 +65,7 @@ export default {
       // 是否全选
       let allSelect = true;
       // 已完成数量
-      let doneCount = this.todoItemList.reduce((pre, current) => {
+      let doneCount = this.sortedTodoItemList.reduce((pre, current) => {
         if(allSelect && !current.isDone){
           allSelect = false;
         }
@@ -89,7 +75,7 @@ export default {
         return pre;
       }, 0)
       // 全部数量
-      let totalCount = this.todoItemList.length;
+      let totalCount = this.sortedTodoItemList.length;
       //  若列表为空则视为非全选
       allSelect = totalCount > 0 && allSelect;
       // 封装统计数据
@@ -100,6 +86,16 @@ export default {
       }
       console.log("update todoCountData: ", data);
       return data;
+    }
+  },
+  watch:{
+    todoItemList:{
+      // 开启深度监视，内层数据变化也可以被监视到
+      deep: true,
+      handler(newValue){
+        console.log('watch todoItemList');
+        window.localStorage.setItem('todoItemList', JSON.stringify(newValue));
+      }
     }
   },
   components:{

@@ -12,7 +12,7 @@ Vue.config.productionTip = false
 Vue.use(testPlugins);
 
 // 创建Vue实例对象
-new Vue({
+const vue = new Vue({
   // 将App组件放入容器（el）中，渲染出来
   render: h => h(App)
 
@@ -20,4 +20,5 @@ new Vue({
   // render(createElementFunc){
   //   return createElementFunc(App)
   // }
-}).$mount('#app')
+}).$mount('#app');
+console.log(vue);
