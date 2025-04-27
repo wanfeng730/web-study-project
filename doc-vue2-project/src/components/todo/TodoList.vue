@@ -2,7 +2,7 @@
 
 <template>
 <div>
-  <TodoItem v-for="(item, index) in sortedTodoItemList" :key="item.id" :itemData="item" :removeTodoItem="removeTodoItem"></TodoItem>
+  <TodoItem v-for="(item, index) in sortedTodoItemList" :key="item.id" :itemData="item" ></TodoItem>
 </div>
 </template>
 
@@ -16,7 +16,7 @@ export default {
       
     }
   },
-  props:['sortedTodoItemList', 'removeTodoItem'],
+  props:['sortedTodoItemList'],
   components:{
     TodoItem
   }

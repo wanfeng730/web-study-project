@@ -3,10 +3,13 @@
 <template>
 <div>
     <h2>待办事项Todo</h2>
-    <!-- 各个事件交互的方法由props传入子组件中，子组件调用方法，实现组件之间通信 -->
+    
     <!-- 给组件绑定自定义事件，由组件调用$emit触发事件，实现组件之间通信 -->
-    <TodoCreate @addTodoItem="addTodoItem"></TodoCreate>
-    <TodoList :sortedTodoItemList="sortedTodoItemList" :removeTodoItem="removeTodoItem"></TodoList>
+    <TodoCreate></TodoCreate>
+
+    <!-- 各个事件交互的方法由props传入子组件中，子组件调用方法，实现组件之间通信 -->
+    <TodoList :sortedTodoItemList="sortedTodoItemList"></TodoList>
+
     <TodoCount :todoCountData="todoCountData" @removeAllItems="removeAllItems()" @selectAllChange="selectAllChange()"></TodoCount>
 </div>
 </template>
@@ -18,6 +21,9 @@ import TodoList from './TodoList.vue';
 
 export default {
   name: 'Todo',
+  components:{
+    TodoCreate,TodoList,TodoCount
+  },
   data () {
     return {
       // 若localStorage为null，则使用空数组
@@ -99,8 +105,26 @@ export default {
       }
     }
   },
-  components:{
-    TodoCreate,TodoList,TodoCount
+  mounted(){
+    console.log(this.eventCenter);
+    // 全局事件总线绑定事件：添加待办事项
+    this.$eventCenter.$on('addTodoItem', itemData => {
+      console.log('eventCenter触发事件addTodoItem data:', itemData);
+      console.log('eventCenter触发事件addTodoItem this:', this);
+      this.addTodoItem(itemData);
+    });
+    // 全局事件总线绑定事件：删除待办事项
+    this.$eventCenter.$on('removeTodoItem', itemData => {
+      console.log('eventCenter触发事件removeTodoItem data:', itemData);
+      this.removeTodoItem(itemData);
+    });
+  },
+  beforeDestroy(){
+    // 销毁该组件前先解绑事件
+    this.$eventCenter.$off([
+      'addTodoItem',
+      'removeTodoItem'
+    ]);
   }
 }
 </script>

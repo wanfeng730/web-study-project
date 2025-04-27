@@ -32,7 +32,9 @@ export default {
         isDone: false
       }
       // 触发该组件绑定的addTodoItem事件，传入itemData
-      this.$emit('addTodoItem', itemData);
+      // console.log(this.$eventCenter);
+      // this.$emit('addTodoItem', itemData);
+      this.$eventCenter.$emit('addTodoItem', itemData);
       // 清空输入框
       this.createItemContent = '';
     }

@@ -6,7 +6,7 @@
     <input type="checkbox" v-model="itemData.isDone" @change="itemCheckChange(itemData)">
     <span :class="getItemNameClass">{{ itemData.name }}</span>
   </div>
-  <button class="delete_button" @click="removeTodoItem(itemData)">删除</button>
+  <button class="delete_button" @click="removeTodoItem()">删除</button>
 </div>
 </template>
 
@@ -21,13 +21,18 @@ export default {
     }
   },
   // 接收事项数据
-  props:['itemData', 'removeTodoItem'],
+  props:['itemData'],
   methods:{
     itemCheckChange(itemData){
       console.log("itemCheckChange itemData:", itemData);
     },
     itemCheck(event){
       console.log(event);
+    },
+    removeTodoItem(){
+      // 触发全局事件removeTodoItem
+      console.log('触发全局事件removeTodoItem itemData:', this.itemData);
+      this.$eventCenter.$emit('removeTodoItem', this.itemData);
     }
   },
   computed:{
