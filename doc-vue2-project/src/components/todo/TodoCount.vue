@@ -27,9 +27,14 @@ export default {
     }
   },
   methods:{
-
+    removeAllItems(){
+      this.$emit('removeAllItems');
+    },
+    selectAllChange(){
+      this.$emit('selectAllChange');
+    }
   },
-  props:['todoCountData', 'removeAllItems', 'selectAllChange']
+  props:['todoCountData']
 }
 </script>
 

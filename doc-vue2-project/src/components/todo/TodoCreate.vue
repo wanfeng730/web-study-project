@@ -31,13 +31,12 @@ export default {
         name: this.createItemContent,
         isDone: false
       }
-      // 调用父组件提供的addTodoItem函数，传入itemData
-      this.addTodoItem(itemData);
+      // 触发该组件绑定的addTodoItem事件，传入itemData
+      this.$emit('addTodoItem', itemData);
       // 清空输入框
       this.createItemContent = '';
     }
-  },
-  props:['addTodoItem']
+  }
 }
 </script>
 

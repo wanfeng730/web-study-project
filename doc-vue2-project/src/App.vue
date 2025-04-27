@@ -16,7 +16,8 @@
         <UserInfoMixin></UserInfoMixin>
 
         <!-- 自定义事件 绑定在vc上，可通过vc.$emit(事件名)触发这个时间 -->
-        <UserInfoCustomEvent ref="userInfoCustomEvent" v-on:hahaha="hahahaFunc" :getCustomEventData="getCustomEventData"></UserInfoCustomEvent>
+        <!-- 若在组件上绑定默认的事件，需要加上.native后缀 -->
+        <UserInfoCustomEvent ref="userInfoCustomEvent" @click.native="clickCustomEvent" v-on:hahaha="hahahaFunc" :getCustomEventData="getCustomEventData"></UserInfoCustomEvent>
 
         <!-- 待办事项列表 -->
         <Todo></Todo>
@@ -76,6 +77,9 @@ export default {
         },
         hahahaFunc(username){
             console.log(username + '：哈哈哈哈哈哈哈哈哈哈');
+        },
+        clickCustomEvent(){
+            alert('clickCustomEvent');
         }
     },
     components:{
@@ -89,7 +93,7 @@ export default {
         console.log('App mounted');
         // 获取组件实例对象，设置自定义事件被触发时执行的函数
         this.$refs.userInfoCustomEvent.$on('hahaha', () => {
-            console.log('hahaha事件回调');
+            console.log('hahaha事件回调 this:', this);
         })
     }
 }

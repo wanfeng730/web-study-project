@@ -4,9 +4,10 @@
 <div>
     <h2>待办事项Todo</h2>
     <!-- 各个事件交互的方法由props传入子组件中，子组件调用方法，实现组件之间通信 -->
-    <TodoCreate :addTodoItem="addTodoItem"></TodoCreate>
+    <!-- 给组件绑定自定义事件，由组件调用$emit触发事件，实现组件之间通信 -->
+    <TodoCreate @addTodoItem="addTodoItem"></TodoCreate>
     <TodoList :sortedTodoItemList="sortedTodoItemList" :removeTodoItem="removeTodoItem"></TodoList>
-    <TodoCount :todoCountData="todoCountData" :removeAllItems="removeAllItems" :selectAllChange="selectAllChange"></TodoCount>
+    <TodoCount :todoCountData="todoCountData" @removeAllItems="removeAllItems()" @selectAllChange="selectAllChange()"></TodoCount>
 </div>
 </template>
 
