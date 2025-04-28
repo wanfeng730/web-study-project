@@ -19,8 +19,11 @@
 </template>
 
 <script>
+import pubsub from 'pubsub-js';
+
 export default {
   name: 'TodoCount',
+  props:['todoCountData'],
   data () {
     return {
       
@@ -34,7 +37,18 @@ export default {
       this.$emit('selectAllChange');
     }
   },
-  props:['todoCountData']
+  mounted(){
+    // 配置订阅消息及接收消息的回调函数
+    this.publishId = pubsub.subscribe('addItem', (messageName, data) => {
+      console.log('TodoCount接收消息 this：', this);
+      console.log('TodoCount接收消息 messageName：', messageName);
+      console.log('TodoCount接收消息 data', data);
+    })
+  },
+  beforeDestroy(){
+    // 取消订阅消息
+    pubsub.unsubscribe(this.publishId);
+  }
 }
 </script>
 

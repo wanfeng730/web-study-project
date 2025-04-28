@@ -8,6 +8,7 @@
 
 <script>
 import { nanoid } from 'nanoid';
+import pubsub from 'pubsub-js';
 
 
 export default {
@@ -35,6 +36,10 @@ export default {
       // console.log(this.$eventCenter);
       // this.$emit('addTodoItem', itemData);
       this.$eventCenter.$emit('addTodoItem', itemData);
+
+      // 发布消息
+      pubsub.publish('addItem', itemData);
+      
       // 清空输入框
       this.createItemContent = '';
     }
