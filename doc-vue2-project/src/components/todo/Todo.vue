@@ -133,6 +133,18 @@ export default {
 div{
   font-size: 15px;
 }
+button{
+  margin-left: 5px;
+  box-shadow: inset 0px 0px 2px 1px #000;
+}
+.update_button{
+  color: white;
+  background-color: blue;
+  width: 60px;
+  height: 30px;
+  border: 1px solid gray;
+  border-radius: 10px;
+}
 .delete_button{
   color: white;
   background-color: orangered;
@@ -140,5 +152,11 @@ div{
   height: 30px;
   border: 1px solid gray;
   border-radius: 10px;
+}
+.display_disable{
+  display: none;
+}
+.display_enable{
+  display: block;
 }
 </style>
