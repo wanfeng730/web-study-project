@@ -10,7 +10,11 @@
     <!-- 各个事件交互的方法由props传入子组件中，子组件调用方法，实现组件之间通信 -->
     <TodoList :sortedTodoItemList="sortedTodoItemList"></TodoList>
 
-    <TodoCount :todoCountData="todoCountData" @removeAllItems="removeAllItems()" @selectAllChange="selectAllChange()"></TodoCount>
+    <TodoCount 
+    :todoCountData="todoCountData" 
+    @removeAllItems="removeAllItems()" 
+    @selectAllChange="selectAllChange()"
+    @startUpdateTodoItem="startUpdateTodoItem()"></TodoCount>
 </div>
 </template>
 
@@ -48,9 +52,9 @@ export default {
     },
     // 删除所有事项
     removeAllItems(){
-      if(!confirm('确认删除所有事项吗？')){
-        return;
-      }
+      // if(!confirm('确认删除所有事项吗？')){
+      //   return;
+      // }
       console.log("删除所有事项");
       this.todoItemList = [];
     },
@@ -106,7 +110,7 @@ export default {
     }
   },
   mounted(){
-    console.log(this.eventCenter);
+    console.log('Todo mounted', this.$eventCenter);
     // 全局事件总线绑定事件：添加待办事项
     this.$eventCenter.$on('addTodoItem', itemData => {
       console.log('eventCenter触发事件addTodoItem data:', itemData);

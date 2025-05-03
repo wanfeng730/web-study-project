@@ -4,10 +4,14 @@
 <div class="item_div" @mouseover="mouseOverTodoItem()" @mouseout="mouseOutTotoItem()">
   <div class="item_content_div">
     <input type="checkbox" v-model="itemData.isDone" @change="itemCheckChange(itemData)">
-    <span :class="getItemNameClass">{{ itemData.name }}</span>
+    <input ref="updateInput"
+    :class="itemNameClass"
+    id="updateInput"
+    type="text" 
+    v-model="itemData.name" 
+    @focusout="endUpdateTodoItem()">
   </div>
   <div>
-    <button :class="updateButtonClass" @click="updateTodoItem()">编辑</button>
     <button :class="deleteButtonClass" @click="removeTodoItem()">删除</button>
   </div>
   
@@ -19,7 +23,11 @@ export default {
   name: 'TodoItem',
   data () {
     return {
-      itemNameClass: 'item_name_todo',
+      itemNameClass: {
+        'item_name_input': true,
+        'item_name_todo': true,
+        'item_name_done': false
+      },
       // itemName: '事项名称',
       // isDone: false
       updateButtonClass: {
@@ -40,13 +48,20 @@ export default {
   props:['itemData'],
   methods:{
     itemCheckChange(itemData){
-      console.log("itemCheckChange itemData:", itemData);
+      console.log("itemCheckChange itemData:", this.itemData);
+      this.updateItemNameStyle();
     },
     itemCheck(event){
       console.log(event);
     },
-    updateTodoItem(){
-
+    // startUpdateTodoItem(){
+    //   console.log('startUpdateTodoItem', this);
+    //   // 开始编辑时自动获取焦点，通过vue的refs方式获取焦点的input框，若使用v-show，会导致focus方法失效
+    //   this.$refs.updateInput.focus();
+    //   this.$eventCenter.$emit('startUpdateTodoItem', this.itemData);
+    // },
+    endUpdateTodoItem(){
+      console.log('endUpdateTodoItem', this.itemData);
     },
     removeTodoItem(){
       // 触发全局事件removeTodoItem
@@ -68,8 +83,9 @@ export default {
   },
   computed:{
     // 计算待办事项名称的class名称
-    getItemNameClass(){
-      return this.itemData.isDone ? 'item_name_done' : 'item_name_todo'
+    updateItemNameStyle(){
+        this.itemNameClass.item_name_done = this.itemData.isDone;
+        this.itemNameClass.item_name_todo = !this.itemData.isDone;
     }
   }
 }
@@ -87,6 +103,12 @@ div{
   width: 350px;
   border-bottom: 1px solid gray;
 }
+.item_name_input{
+  background: #22252A;
+  color: aliceblue;
+  height: 25px;
+  border: none;
+}
 .item_name_todo{
   color: white;
   font-weight: bold;
@@ -95,5 +117,6 @@ div{
   color: gray;
   text-decoration: line-through;
 }
+
 
 </style>
