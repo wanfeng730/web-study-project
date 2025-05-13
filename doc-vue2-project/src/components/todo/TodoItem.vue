@@ -54,12 +54,16 @@ export default {
     itemCheck(event){
       console.log(event);
     },
-    // startUpdateTodoItem(){
-    //   console.log('startUpdateTodoItem', this);
-    //   // 开始编辑时自动获取焦点，通过vue的refs方式获取焦点的input框，若使用v-show，会导致focus方法失效
-    //   this.$refs.updateInput.focus();
-    //   this.$eventCenter.$emit('startUpdateTodoItem', this.itemData);
-    // },
+    startUpdateTodoItem(){
+      console.log('startUpdateTodoItem', this);
+      // 开始编辑时自动获取焦点，通过vue的refs方式获取焦点的input框，此时输入框还在隐藏中，vue没有解析模版，所以focus失效
+      // this.$refs.updateInput.focus();
+      // 使用this.$nextTick回调，vue会在dom页面解析完成后调用该回调函数
+      this.$nextTick(function(){
+        this.$refs.updateInput.focus();
+      })
+      this.$eventCenter.$emit('startUpdateTodoItem', this.itemData);
+    },
     endUpdateTodoItem(){
       console.log('endUpdateTodoItem', this.itemData);
     },
