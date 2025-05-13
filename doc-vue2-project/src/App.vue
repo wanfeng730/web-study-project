@@ -3,26 +3,29 @@
 <template>
     <div>
         <!-- ref属性代表该元素/组件被标记，可用vue.$refs获取所有的ref标记的元素/组件 -->
-        <span ref="span1">span短语内容</span>
+        <!-- <span ref="span1">span短语内容</span> -->
 
         <!-- <UserInfo ref="userinfo"></UserInfo> -->
-        <Search ref="search"></Search>
+        <!-- <Search ref="search"></Search> -->
 
-        <button @click="showRef()">输出ref内容</button>
+        <!-- <button @click="showRef()">输出ref内容</button> -->
 
         <!-- props用于指定传入组件的data数据 -->
-        <UserInfo password="自定义1" :age="14-9"></UserInfo>
+        <!-- <UserInfo password="自定义1" :age="14-9"></UserInfo> -->
 
-        <UserInfoMixin></UserInfoMixin>
+        <!-- <UserInfoMixin></UserInfoMixin> -->
 
         <!-- 自定义事件 绑定在vc上，可通过vc.$emit(事件名)触发这个时间 -->
         <!-- 若在组件上绑定默认的事件，需要加上.native后缀 -->
-        <UserInfoCustomEvent ref="userInfoCustomEvent" @click.native="clickCustomEvent" v-on:hahaha="hahahaFunc" :getCustomEventData="getCustomEventData"></UserInfoCustomEvent>
+        <!-- <UserInfoCustomEvent ref="userInfoCustomEvent" @click.native="clickCustomEvent" v-on:hahaha="hahahaFunc" :getCustomEventData="getCustomEventData"></UserInfoCustomEvent> -->
 
         <!-- 待办事项列表 -->
-        <Todo></Todo>
+        <!-- <Todo></Todo> -->
 
         <button @click="testArrayReduceFunction()">测试数组的Reduce方法</button>
+
+        <!-- 动画效果 进入，离开 -->
+        <AnimationInOut></AnimationInOut>
     </div>
 </template>
 
@@ -33,6 +36,7 @@ import Search from './components/Search.vue';
 import UserInfoMixin from './components/UserInfoMixin.vue';
 import Todo from './components/todo/Todo.vue';
 import UserInfoCustomEvent from './components/UserInfoCustomEvent.vue';
+import AnimationInOut from './components/animation/AnimationInOut.vue';
 
 // 暴露当前组件的属性和方法
 export default {
@@ -87,7 +91,8 @@ export default {
         Search,
         UserInfoMixin,
         Todo,
-        UserInfoCustomEvent
+        UserInfoCustomEvent,
+        AnimationInOut
     },
     mounted(){
         console.log('App mounted');
