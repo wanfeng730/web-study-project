@@ -26,6 +26,9 @@
 
         <!-- 动画效果 进入，离开 -->
         <AnimationInOut></AnimationInOut>
+
+        <!-- 集成第三方动画样式库 -->
+        <AnimateUse></AnimateUse>
     </div>
 </template>
 
@@ -37,6 +40,7 @@ import UserInfoMixin from './components/UserInfoMixin.vue';
 import Todo from './components/todo/Todo.vue';
 import UserInfoCustomEvent from './components/UserInfoCustomEvent.vue';
 import AnimationInOut from './components/animation/AnimationInOut.vue';
+import AnimateUse from './components/animation/AnimateUse.vue';
 
 // 暴露当前组件的属性和方法
 export default {
@@ -92,7 +96,8 @@ export default {
         UserInfoMixin,
         Todo,
         UserInfoCustomEvent,
-        AnimationInOut
+        AnimationInOut,
+        AnimateUse
     },
     mounted(){
         console.log('App mounted');
