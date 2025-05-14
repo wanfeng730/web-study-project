@@ -1,24 +1,30 @@
 <!--  -->
 
 <template>
-<div class="item_div" @mouseover="mouseOverTodoItem()" @mouseout="mouseOutTotoItem()">
-  <div class="item_content_div">
-    <input type="checkbox" v-model="itemData.isDone" @change="itemCheckChange(itemData)">
-    <input ref="updateInput"
-    :class="itemNameClass"
-    id="updateInput"
-    type="text" 
-    v-model="itemData.name" 
-    @focusout="endUpdateTodoItem()">
+<transition appear 
+name="animate__animated animate__bounce"
+enter-active-class="animate__rubberBand"
+leave-active-class="animate__bounceOut">
+  <div class="item_div" @mouseover="mouseOverTodoItem()" @mouseout="mouseOutTotoItem()">
+    <div class="item_content_div">
+      <input type="checkbox" v-model="itemData.isDone" @change="itemCheckChange(itemData)">
+      <input ref="updateInput"
+      :class="itemNameClass"
+      id="updateInput"
+      type="text" 
+      v-model="itemData.name" 
+      @focusout="endUpdateTodoItem()">
+    </div>
+    <div>
+      <button :class="deleteButtonClass" @click="removeTodoItem()">删除</button>
+    </div>
+    
   </div>
-  <div>
-    <button :class="deleteButtonClass" @click="removeTodoItem()">删除</button>
-  </div>
-  
-</div>
+</transition>
 </template>
 
 <script>
+import 'animate.css'
 export default {
   name: 'TodoItem',
   data () {
@@ -105,7 +111,10 @@ div{
 }
 .item_div{
   width: 350px;
-  border-bottom: 1px solid gray;
+  border: 1px solid gray;
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 .item_name_input{
   background: #22252A;

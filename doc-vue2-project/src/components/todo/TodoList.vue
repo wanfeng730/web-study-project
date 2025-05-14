@@ -1,7 +1,7 @@
 <!--  -->
 
 <template>
-<div>
+<div class="todo_item">
   <TodoItem v-for="(item, index) in sortedTodoItemList" :key="item.id" :itemData="item" ></TodoItem>
 </div>
 </template>
@@ -24,5 +24,4 @@ export default {
 </script>
 
 <style scoped>
-
 </style>
