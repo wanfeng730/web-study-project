@@ -29,6 +29,9 @@
 
         <!-- 集成第三方动画样式库 -->
         <AnimateUse></AnimateUse>
+
+        <!-- 使用axios发送请求 -->
+        <AxiosGetUserInfo></AxiosGetUserInfo>
     </div>
 </template>
 
@@ -41,10 +44,21 @@ import Todo from './components/todo/Todo.vue';
 import UserInfoCustomEvent from './components/UserInfoCustomEvent.vue';
 import AnimationInOut from './components/animation/AnimationInOut.vue';
 import AnimateUse from './components/animation/AnimateUse.vue';
+import AxiosGetUserInfo from './components/axios/AxiosGetUserInfo.vue';
 
 // 暴露当前组件的属性和方法
 export default {
     name: 'App',
+    components:{
+        UserInfo,
+        Search,
+        UserInfoMixin,
+        Todo,
+        UserInfoCustomEvent,
+        AnimationInOut,
+        AnimateUse,
+        AxiosGetUserInfo
+    },
     data () {
         return {
             todoItemList:[
@@ -90,21 +104,12 @@ export default {
             alert('clickCustomEvent');
         }
     },
-    components:{
-        UserInfo,
-        Search,
-        UserInfoMixin,
-        Todo,
-        UserInfoCustomEvent,
-        AnimationInOut,
-        AnimateUse
-    },
     mounted(){
         console.log('App mounted');
         // 获取组件实例对象，设置自定义事件被触发时执行的函数
-        this.$refs.userInfoCustomEvent.$on('hahaha', () => {
-            console.log('hahaha事件回调 this:', this);
-        })
+        // this.$refs.userInfoCustomEvent.$on('hahaha', () => {
+        //     console.log('hahaha事件回调 this:', this);
+        // })
     }
 }
 </script>

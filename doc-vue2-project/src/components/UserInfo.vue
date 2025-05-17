@@ -6,7 +6,7 @@
         <span>状态：{{status}}</span><br>
         <span>密码：{{password}}</span><br>
         <span>年龄：{{age}}</span><br>
-        <button @click="showStatus()">提示用户状态</button>
+        <button @click="showStatus()"></button>
     </div>
 </template>
 
