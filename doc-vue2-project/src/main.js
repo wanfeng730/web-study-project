@@ -4,6 +4,9 @@ import App from './App.vue'
 
 // 引入插件
 import testPlugins from './testPlugins'
+// 引入store
+import store from './store'
+// import store from './store/index.js'
 
 // 关闭Vue生产环境提示
 Vue.config.productionTip = false
@@ -22,6 +25,9 @@ Vue.use(testPlugins);
 const vue = new Vue({
   // 将App组件放入容器（el）中，渲染出来
   render: h => h(App),
+
+  // 使用Vuex后可配置store，在vue实例的$store中存储
+  store: store,
 
   // render函数的原型，createElementFunc是创建一个标签或组件的函数
   // render(createElementFunc){

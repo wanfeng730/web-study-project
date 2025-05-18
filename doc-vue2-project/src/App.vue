@@ -32,6 +32,8 @@
 
         <!-- 使用axios发送请求 -->
         <AxiosGetUserInfo></AxiosGetUserInfo>
+
+        <VuexUse></VuexUse>
     </div>
 </template>
 
@@ -45,6 +47,7 @@ import UserInfoCustomEvent from './components/UserInfoCustomEvent.vue';
 import AnimationInOut from './components/animation/AnimationInOut.vue';
 import AnimateUse from './components/animation/AnimateUse.vue';
 import AxiosGetUserInfo from './components/axios/AxiosGetUserInfo.vue';
+import VuexUse from './components/VuexUse.vue';
 
 // 暴露当前组件的属性和方法
 export default {
@@ -57,7 +60,8 @@ export default {
         UserInfoCustomEvent,
         AnimationInOut,
         AnimateUse,
-        AxiosGetUserInfo
+        AxiosGetUserInfo,
+        VuexUse
     },
     data () {
         return {
