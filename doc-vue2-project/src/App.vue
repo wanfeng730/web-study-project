@@ -20,15 +20,15 @@
         <!-- <UserInfoCustomEvent ref="userInfoCustomEvent" @click.native="clickCustomEvent" v-on:hahaha="hahahaFunc" :getCustomEventData="getCustomEventData"></UserInfoCustomEvent> -->
 
         <!-- 待办事项列表 -->
-        <Todo></Todo>
+        <!-- <Todo></Todo> -->
 
-        <button @click="testArrayReduceFunction()">测试数组的Reduce方法</button>
+        <!-- <button @click="testArrayReduceFunction()">测试数组的Reduce方法</button> -->
 
         <!-- 动画效果 进入，离开 -->
-        <AnimationInOut></AnimationInOut>
+        <!-- <AnimationInOut></AnimationInOut> -->
 
         <!-- 集成第三方动画样式库 -->
-        <AnimateUse></AnimateUse>
+        <!-- <AnimateUse></AnimateUse> -->
 
         <!-- 使用axios发送请求 -->
         <AxiosGetUserInfo></AxiosGetUserInfo>
