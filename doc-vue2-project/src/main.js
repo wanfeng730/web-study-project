@@ -7,6 +7,9 @@ import testPlugins from './testPlugins'
 // 引入store
 import store from './store'
 // import store from './store/index.js'
+// 引入vue路由插件
+import VueRouter from 'vue-router'
+import routerConfig from './router/index.js'
 
 // 关闭Vue生产环境提示
 Vue.config.productionTip = false
@@ -21,18 +24,22 @@ Vue.use(testPlugins);
 // console.log('初始化事件总线组件实例', eventCenter);
 // Vue.prototype.eventCenter = eventCenter;
 
+Vue.use(VueRouter);
+
 // 创建Vue实例对象
 const vue = new Vue({
   // 将App组件放入容器（el）中，渲染出来
   render: h => h(App),
-
-  // 使用Vuex后可配置store，在vue实例的$store中存储
-  store: store,
-
   // render函数的原型，createElementFunc是创建一个标签或组件的函数
   // render(createElementFunc){
   //   return createElementFunc(App)
   // }
+
+  // 使用Vuex后可配置store，在vue实例的$store中存储
+  store: store,
+
+  router: routerConfig,
+  
 
   beforeCreate(){
     // 初始化全局事件总线：将vm对象作为全局事件总线放在原型对象上（

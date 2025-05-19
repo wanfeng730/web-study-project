@@ -16,6 +16,7 @@
     "pubsub-js": "^1.9.5",
     "uuid": "^11.1.0",
     "vue": "^2.6.14",
+    "vue-router": "^3.6.5",
     "vuex": "^3.6.2"
   },
   "devDependencies": {
