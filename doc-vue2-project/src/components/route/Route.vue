@@ -14,8 +14,8 @@
 </template>
 
 <script>
-import RouteAbout from './RouteAbout.vue';
-import RouteHome from './RouteHome.vue';
+import RouteAbout from '../../pages/RouteAbout.vue';
+import RouteHome from '../../pages/RouteHome.vue';
 
 export default {
   name: 'Route',

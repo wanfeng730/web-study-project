@@ -1,6 +1,6 @@
 // 配置vue应用的路由
-import RouteAbout from '@/components/route/RouteAbout.vue';
-import RouteHome from '@/components/route/RouteHome.vue';
+import RouteAbout from '@/pages/RouteAbout.vue';
+import RouteHome from '@/pages/RouteHome.vue';
 import VueRouter from 'vue-router'
 
 // 创建路由实例对象
