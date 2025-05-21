@@ -1,7 +1,8 @@
 <!--  -->
 
 <template>
-<div>
+<div class="todo">
+  <div>
     <h2>待办事项Todo</h2>
     
     <!-- 给组件绑定自定义事件，由组件调用$emit触发事件，实现组件之间通信 -->
@@ -15,18 +16,24 @@
     @removeAllItems="removeAllItems()" 
     @selectAllChange="selectAllChange()"
     @startUpdateTodoItem="startUpdateTodoItem()"></TodoCount>
+  </div>
+  <div>
+    
+  </div>
+    
 </div>
 </template>
 
 <script>
 import TodoCount from './TodoCount.vue';
 import TodoCreate from './TodoCreate.vue';
+import TodoDetail from './TodoDetail.vue';
 import TodoList from './TodoList.vue';
 
 export default {
   name: 'Todo',
   components:{
-    TodoCreate,TodoList,TodoCount
+    TodoCreate,TodoList,TodoCount,TodoDetail
   },
   data () {
     return {
@@ -140,6 +147,9 @@ div{
 button{
   margin-left: 5px;
   box-shadow: inset 0px 0px 2px 1px #000;
+}
+.todo{
+  display: flexbox;
 }
 .update_button{
   color: white;

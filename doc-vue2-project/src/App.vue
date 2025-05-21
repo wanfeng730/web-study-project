@@ -20,7 +20,7 @@
         <!-- <UserInfoCustomEvent ref="userInfoCustomEvent" @click.native="clickCustomEvent" v-on:hahaha="hahahaFunc" :getCustomEventData="getCustomEventData"></UserInfoCustomEvent> -->
 
         <!-- 待办事项列表 -->
-        <!-- <Todo></Todo> -->
+        <Todo></Todo>
 
         <!-- <button @click="testArrayReduceFunction()">测试数组的Reduce方法</button> -->
 

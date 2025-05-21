@@ -2,7 +2,7 @@
 
 <template>
 <div>
-  About Component
+  About Component<br>
   <router-link active-class="router_active" to="/about/news">News</router-link>
   <router-link active-class="router_active" to="/about/messages">Messages</router-link>
   <div>

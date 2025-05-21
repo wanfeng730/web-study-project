@@ -1,4 +1,5 @@
 // 配置vue应用的路由
+import MessageDetail from '@/pages/MessageDetail.vue';
 import Messages from '@/pages/Messages.vue';
 import News from '@/pages/News.vue';
 import RouteAbout from '@/pages/RouteAbout.vue';
@@ -20,15 +21,20 @@ const router =new VueRouter({
         },
         {
           path: 'messages',
-          component: Messages
+          component: Messages,
+          children: [
+            {
+              path: 'detail',
+              component: MessageDetail
+            }
+          ]
         }
       ]
     },
     {
       path:'/home',
       component: RouteHome
-    },
-    
+    }
   ]
 });
 
