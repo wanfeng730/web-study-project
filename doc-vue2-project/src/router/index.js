@@ -1,4 +1,6 @@
 // 配置vue应用的路由
+import Messages from '@/pages/Messages.vue';
+import News from '@/pages/News.vue';
 import RouteAbout from '@/pages/RouteAbout.vue';
 import RouteHome from '@/pages/RouteHome.vue';
 import VueRouter from 'vue-router'
@@ -7,13 +9,26 @@ import VueRouter from 'vue-router'
 const router =new VueRouter({
   routes:[
     {
+      // 第一级路径需要用斜杠开头
       path:'/about',
-      component: RouteAbout
+      component: RouteAbout,
+      children:[
+        // 从第二级开始不要用斜杠
+        {
+          path: 'news',
+          component: News
+        },
+        {
+          path: 'messages',
+          component: Messages
+        }
+      ]
     },
     {
       path:'/home',
       component: RouteHome
-    }
+    },
+    
   ]
 });
 
