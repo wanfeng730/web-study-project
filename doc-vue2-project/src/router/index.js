@@ -25,7 +25,29 @@ const router =new VueRouter({
           children: [
             {
               path: 'detail',
-              component: MessageDetail
+              component: MessageDetail,
+              // props为对象
+              // props:{status: '学习中', unitCode:'YYGHJ'},
+
+              // props为函数，参数为route，返回传递的数据
+              props($route){
+                return{
+                  id: $route.query.id,
+                  name: $route.query.name,
+                  status: '学习中',
+                  unitCode: 'HHJYH'
+                }
+              },
+
+              // props为函数，参数为route，返回传递的数据（解构赋值）
+              props({query:{id, name}}) {
+                return {
+                  id,
+                  name,
+                  status: '学习中',
+                  unitCode: 'HHJYH'
+                }
+              }
             }
           ]
         }
