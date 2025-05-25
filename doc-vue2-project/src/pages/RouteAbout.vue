@@ -39,6 +39,22 @@ export default {
   },
   beforeDestroy(){
     console.log('RouteAbout beforeDestroy');
+  },
+  // 该组件路由进入之前调用
+  beforeRouteEnter(to, from, next){
+    console.log('About beforeRouteEnter');
+    // console.log('to: ', to);
+    // console.log('from: ', from);
+    // console.log('next: ', next);
+    next()
+  },
+  // 该组件路由离开之前调用
+  beforeRouteLeave(to, from, next){
+    console.log('About beforeRouteLeave');
+    // console.log('to: ', to);
+    // console.log('from: ', from);
+    // console.log('next: ', next);
+    next()
   }
 }
 </script>
