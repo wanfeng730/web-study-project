@@ -40,6 +40,7 @@ export default {
   border: 1px solid gray;
   border-radius: 10px;
   margin-left: 30px;
+  color: white;
 }
 .active_item{
   background: pink;
