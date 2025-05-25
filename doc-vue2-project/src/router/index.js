@@ -7,7 +7,7 @@ import RouteHome from '@/pages/RouteHome.vue';
 import VueRouter from 'vue-router'
 
 // 创建路由实例对象
-const router =new VueRouter({
+const router = new VueRouter({
   routes:[
     {
       // 第一级路径需要用斜杠开头
@@ -59,5 +59,26 @@ const router =new VueRouter({
     }
   ]
 });
+
+// 配置路由守卫
+/**
+ * to   切换前的路由信息
+ * from 切换后的路由信息
+ * next 切换函数，调用即表示切换到下一个路由
+ */
+router.beforeEach((to, from, next) => {
+  console.log('路由切换前调用', to, from, next);
+  
+  if (to.path === '/about/messages'){
+    var list = localStorage.getItem('todoItemList') ? JSON.parse(localStorage.getItem('todoItemList')) : [];
+    if (list.length < 5) {
+      alert('待办事项少于5个，不能切换');
+      return;
+    }
+  }
+
+  // 校验通过，切换路由
+  next();
+})
 
 export default router;
