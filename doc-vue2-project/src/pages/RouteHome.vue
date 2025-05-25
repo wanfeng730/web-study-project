@@ -19,6 +19,9 @@ export default {
   },
   components: {
     
+  },
+  beforeDestroy(){
+    console.log('Home Component beforeDestroy');
   }
 }
 </script>

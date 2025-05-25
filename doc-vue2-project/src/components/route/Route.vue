@@ -8,7 +8,10 @@
   </div>
 
   <div>
-    <router-view></router-view>
+    <!-- keep-alive包裹，在切换路由后不会被销毁 include指定包含的组件名，多个组件使用数组表示 -->
+    <keep-alive :include="['RouteHome', 'RouteAbout']">
+      <router-view></router-view>
+    </keep-alive>
   </div>
 </div>
 </template>

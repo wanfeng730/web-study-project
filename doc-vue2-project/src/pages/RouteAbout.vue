@@ -28,6 +28,17 @@ export default {
   components: {
     News,
     Messages
+  },
+  //路由生命周期函数：该组件的路由被激活（用户切换到了该路由）
+  activated(){
+    console.log('About activated');
+  },
+  //路由生命周期函数：该组件的路由被失活（用户从该路由切走）
+  deactivated(){
+    console.log('About deactivated');
+  },
+  beforeDestroy(){
+    console.log('RouteAbout beforeDestroy');
   }
 }
 </script>
