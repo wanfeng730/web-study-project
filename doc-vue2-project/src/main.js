@@ -7,9 +7,15 @@ import testPlugins from './testPlugins'
 // 引入store
 import store from './store'
 // import store from './store/index.js'
+
 // 引入vue路由插件
 import VueRouter from 'vue-router'
 import routerConfig from './router/index.js'
+
+// 引入 ElementUI 组件库
+import ElementUI from 'element-ui';
+// 引入 ElementUI 全部样式
+import 'element-ui/lib/theme-chalk/index.css';
 
 // 关闭Vue生产环境提示
 Vue.config.productionTip = false
@@ -25,6 +31,8 @@ Vue.use(testPlugins);
 // Vue.prototype.eventCenter = eventCenter;
 
 Vue.use(VueRouter);
+
+Vue.use(ElementUI);
 
 // 创建Vue实例对象
 const vue = new Vue({

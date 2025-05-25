@@ -37,6 +37,8 @@
 
         <!-- 路由 -->
         <Route></Route>
+
+        <ComponentLibUse></ComponentLibUse>
     </div>
 </template>
 
@@ -52,6 +54,7 @@ import AnimateUse from './components/animation/AnimateUse.vue';
 import AxiosGetUserInfo from './components/axios/AxiosGetUserInfo.vue';
 import VuexUse from './components/VuexUse.vue';
 import Route from './components/route/Route.vue';
+import ComponentLibUse from './components/ComponentLibUse.vue';
 
 // 暴露当前组件的属性和方法
 export default {
@@ -66,7 +69,8 @@ export default {
         AnimateUse,
         AxiosGetUserInfo,
         VuexUse,
-        Route
+        Route,
+        ComponentLibUse
     },
     data () {
         return {
